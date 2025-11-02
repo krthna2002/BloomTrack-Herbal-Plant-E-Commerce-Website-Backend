@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    <!--css-->
+    <style>
+        *{
+    padding: 0px;
+    margin: 0%;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+  font-size: larger;
+    background-color: #f5f5f5;
+    
+}
+.profile p{
+    color:green;
+    font-size:larger;
+    padding:10px;
+    
+}
+.line{
+    border-color:grey;
+    border-width: 100%;
+    
+}
+/* .profile-icon p{
+   background:green; 
+   border-radius: 100%;
+   width:10%;
+   height:20%;
+   font-size: larger;
+   position: fixed;
+   left:80%;
+   top:40%;
+} */
+.profile-icon{
+color:black;
+/* background-color: green; */
+padding-bottom: 20px;
+border-radius: 100%;
+margin-bottom: 10%; 
+width:3%;
+height: 3%;
+border: none;
+margin-left: 90%;
+/* position: relative; */
+margin-top:-30%;
+font-size: larger;
+text-align: center;
+z-index:1000;
+cursor: pointer;
+
+
+}
+.profile-icon:hover{
+color:green;
+
+}
+.profile{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 20px;
+    margin-top: 2px;
+}
+.profile i{
+    font-size:larger;
+    cursor: pointer;
+    transition: 0.3s;
+    
+    }
+    .profile i:hover{
+        background-color: rgba(128, 128, 128, 0.308);
+        color:black;
+        padding:10px;
+        border-radius: 100%;
+        width:25px;
+    text-align: center;
+    }
+/* .get-details1{
+        width:100%;
+        height:100%;
+        background-color:black;
+        position: fixed;
+        opacity: 0.8;
+        z-index:1;
+        top:0px;
+        display: none;
+} */
+.get-details{
+ width:36%;
+background-color: white;
+border-radius: 5px;
+box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+z-index: 2;
+position: relative;
+margin-top:5%;
+padding-top: 2%;
+padding-right: 1%;
+left:30%;
+margin-left:2%; 
+/* display: none; */
+}
+.input-group i{
+    position: absolute;
+top:50%;
+/* left:5%;*/
+width:2%; 
+right: 10px; /*Align icon inside the input box*/
+transform: translateY(-50%);
+} 
+.input-group input{
+    border-radius: 5px;
+    padding:10px;
+    font-size: 20px;
+    margin-top: 5px;
+    /* margin-left: 2%; */
+   /* padding-left: 10%; */
+    border: 1px solid black;
+    width: 100%;
+}
+/* .input-group input::placeholder{
+     padding-left: 10%; 
+} */
+    .input-group {
+    display: flex;
+    flex-direction: column;
+   flex-wrap: wrap;
+   width: 90%;
+    margin: 0 auto; /* Center the input-group */
+    position: relative;
+align-items: flex-start;
+margin-bottom: 3%;
+} 
+    .input-group input:focus{
+        outline: none;
+     }  
+ .get-details button {
+    padding: 10px;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    border: none;
+ border-radius: 5px; 
+    width: 20%; 
+    margin: 10px 2.5%;
+    margin-bottom: 4%;
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 4%;
+} 
+
+.get-details button:last-child {
+    background-color: red;
+}
+.input-group .error{
+        color:red;
+        font-size: 14px;
+        margin-top: 5px;  /* Small space below input */
+    margin-left: 0;   /* No space on the left */
+    padding-left: 0;
+    width: 100%; /* Ensure full width for better alignment */
+    text-align: left;    
+} 
+.profile-store{
+    border:2px solid black;
+    width:30%;
+height:130px;
+    margin-left:35%;
+    padding:2%;
+    margin-top:5%;
+    border-top-right-radius:10px;
+    border-bottom-left-radius:10px;
+    border-top-left-radius:60px;
+    border-bottom-right-radius:60px;
+    background: linear-gradient(to right, #11998e, #38ef7d);
+    /* background: linear-gradient(to right, #87CEEB, #32CD32);*/
+border: 2px solid #008000;  
+display: none;
+}
+/* .profile-store i {
+    color: #FFD700; 
+} */
+.input-details1,.input-details2,.input-details3{
+    display:flex;
+    flex-direction: row;
+    gap:20px;
+    align-items: center;
+    padding:2%;
+}
+.input-details1 p,.input-details2 p,.input-details3 p{
+ /* color:white; */
+ color: white;
+ font-weight: 600;
+}
+/*set hr line*/
+.hrline{
+    border-color:grey;
+    border-width: 100%;
+height:10px;
+background-color: grey;
+display: none;
+margin-top: 3%; /* Adjust this value as needed */
+/* margin-top:40%; */
+}
+/*show item section*/
+.show-item-section{
+ display: none;
+}
+.show-items{
+    width:80%;
+    margin-left: 10%;
+    /* display: none; */
+}
+.show-item{
+    display:flex;
+    flex-direction: row;
+    gap:5%;
+    align-items: center;
+    /* padding: 10px; */
+    margin: 5%;
+    background-color: lightgreen;
+    padding: 2%;
+    border-radius: 10px;
+    
+}
+.show-item i{
+    font-size:xx-large;
+
+}
+.show-item h3{
+    color:green;
+}
+.show-item-details{
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; */
+    display: flex;
+    justify-content: space-between; /* Ensures elements are spaced apart */
+    align-items: center; /* Aligns items vertically */
+   width:95%;
+    gap: 10px; /* Adds spacing between child elements */
+   
+}
+.show-item-details p{
+    padding-top:1%;
+  }
+  .show-item-details .icon:hover{
+    background-color: rgba(0, 128, 0, 0.39); /* Background for icon container */
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Set a proper width */
+    height: 40px; /* Set a proper height */
+    padding: 2%;
+    border-radius: 50%; /* Makes it circular */
+  }
+
+  .hrlines{
+    border-color:grey;
+    border-width: 100%;
+height:10px;
+background-color: grey;
+display: none;
+margin-top: 3%; /* Adjust this value as needed */
+/* margin-top:40%; */
+}
+/*LOGOUT*/
+
+.logout {
+    display: flex; 
+    justify-content: center; /* Centers the button horizontally */
+    margin-top: 3%;
+    display: none;
+    margin-bottom: 5%;
+    margin-left: 20%;
+}
+
+.logout button {
+    background-color: green;
+    color: white;
+    font-size: larger;
+    padding: 10px 20px; /* Adjusted padding for better look */
+    width: 70%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.logout button:hover {
+    background-color: darkgreen; /* Changes color on hover */
+}
+
+
+
+/*add class style*/
+.input-group.success input{
+        border-color: greenyellow;
+     }
+     .input-group .error input{
+        border-color:rgb(206, 54, 54);
+        
+     } 
+     /* @media  screen and (max-width:600px) {
+        .get-details{
+            width:70%;
+            margin-left: -10%;
+        }
+        .profile-container{
+            margin-bottom:20%;
+        }
+        .profile-store{
+ width:65%;
+ margin-left:-1%;
+        }
+
+     } */
+     @media screen and (max-width: 600px) {
+    .get-details {
+        width: 90%; /* Increase width for smaller screens */
+        margin-left: auto;
+        margin-right: auto;
+        padding: 5%;
+    }
+   
+    .profile-container {
+        margin-bottom: 20%;
+    }
+
+    .profile-store {
+        width: 70%; /* Increase width for better visibility */
+        margin: 10% auto; /* Center it properly */
+        height: auto; /* Allow height to adjust dynamically */
+        padding: 5%;
+    }
+.get-details{
+    width:60%;
+    margin-left:-12%;
+}
+    
+
+    /* .input-group input {
+        font-size: 18px; 
+        padding: 8px;
+    } */
+
+    /* .get-details button {
+        width: 40%; 
+        margin: 10px auto;
+        display: block;
+    } */
+}
+
+</style>
+<!--google icons-->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+ <!--font awesome icons-->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
+
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile">
+             <i class="fa fa-angle-left" aria-hidden="true" id="close-profile"></i>
+            <p>PROFILE</p>
+             
+        </div>
+        <hr class="line">
+        
+        <div class="get-details1"></div>
+        <div class="get-details">
+            <form action=""  id="form">
+                
+                <div class="input-group" >
+                    <input type="text" placeholder="Enter the First Name" id="f-Name">
+                    <i class="fa-solid fa-user"></i>
+                    <p class="error"></p>
+                </div>
+                <div class="input-group" >
+                    <input type="text" placeholder="Enter the Last Name" id="l-Name">
+                    <i class="fa-solid fa-user"></i>
+                    <p class="error"></p>
+                </div>
+                <div class="input-group" >
+                    <input type="email" placeholder="Enter the Email" id="email" >
+                    <i class="fa-solid fa-envelope"></i>
+                    <p class="error"></p>
+                </div>
+                <div class="input-group">
+                    <input type="number" id="number" placeholder="Enter the Number" >
+                    <i class="fas fa-eye" id="showPassword" onclick="togglePassword()"></i>
+                    <p class="error"></p>
+                </div>
+                <button id="profile-add">ADD</button>
+                <button onclick="profileRemove(event)" id="profile-remove">CLEAR</button>
+            </form>
+        </div>
+        <div class="profile-store">
+             <div class="input-details1">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <p></p>
+            </div>
+             <div class="input-details2">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <p></p>
+             </div>
+             <div class="input-details3">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <p></p>
+             </div>
+             <div class="profile-icon">
+                <p><i class="fa-solid fa-pencil"></i></p>
+            </div>
+        </div>
+        <hr class="hrline">
+        <div class="show-item-section">
+            <div class="show-items">
+                <div class="show-item">
+                    <p><i class="fa-solid fa-cart-shopping"></i></p>
+                    <div class="show-item-details">
+                        <div class="div">
+                            <h3>Cart</h3>
+                            <p>View your Cart</p>
+                        </div>
+                        
+                        <div>
+                            <p class="icon" onclick="goToCartPage()"><i class="fa fa-angle-right"  aria-hidden="true" ></i></p>
+                        </div>
+                    </div>
+                    
+                   
+                </div>
+                <div class="show-item">
+                    <p><i class="fa-solid fa-location-dot"></i></p>
+                    <div class="show-item-details">
+                        <div class="div">
+                            <h3>Address</h3>
+                            <p>Save address for a hassle free checkout</p>
+                        </div>
+                        
+                        <div>
+                            <p class="icon"><i class="fa fa-angle-right" onclick="goToAddressPage()"  aria-hidden="true" ></i></p>
+                        </div>    
+                    </div>
+                    
+                   
+                </div>
+                <div class="show-item">
+                    <p><i class="fa-solid fa-receipt"></i></p>
+                    <div class="show-item-details">
+                        <div class="div">
+                            <h3>Profile Details</h3>
+                            <p>Change your profile details</p>
+                        </div>
+                        <div>
+                            <p class="icon"><i class="fa fa-angle-right" onclick=" goToProfilePage()"  aria-hidden="true" ></i></p>
+                        </div>
+                    </div>
+                    
+                   
+                </div>
+                <div class="show-item">
+                    <p><i class="fa-solid fa-list-check"></i></p>
+                    <div class="show-item-details">
+                        <div class="div"> 
+                            <h3>Orders</h3>
+                            <p>Check your order status</p>
+                        </div>
+                        <div class="div1">
+                            <p class="icon"><i class="fa fa-angle-right" onclick="goToOrderPage()" aria-hidden="true" ></i></p>
+                        </div>    
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+        <hr class="hrlines">
+        <div class="logout">
+            <button onclick="logout()">LOGOUT</button>
+        </div>
+    </div>
+    <script>
+
+
+let profileEdit = document.querySelector(".profile-icon");
+let firstName = document.getElementById("f-Name");
+let lastName = document.getElementById("l-Name");
+let email = document.getElementById("email");
+let number = document.getElementById("number");
+let profileAdd = document.querySelector("#profile-add");
+
+profileAdd.addEventListener("click", async function (event) 
+{
+    event.preventDefault();
+    const token = localStorage.getItem("token");
+    console.log("token is"+token);
+    if (!token) {
+        alert("User not authenticated! Please log in.");
+        window.location.href = "login.html";  
+        return;
+    }
+    if (!validateInputs()) {
+        return;
+    }
+    const userprofiles = {
+        f_name: firstName.value.trim(),
+        l_name: lastName.value.trim(),
+        email: email.value.trim(),
+        phone: number.value.trim(),
+    };
+    console.log(userprofiles.f_name);
+    try {
+        const token1 = localStorage.getItem("token");
+        console.log("Retrieved Token:", token1);
+        const response = await fetch("https://bloomtrack-herbal-plant-e-commerce.onrender.com/user/profile",
+        // const response = await fetch("http://localhost:3600/user/profile",
+         {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": 'Bearer '+token1
+            },
+            body: JSON.stringify(userprofiles)
+        });
+        console.log("Raw Response:", response);
+        const result = await response.json();
+
+        console.log("Response Status:", response.status);
+        console.log("Response:", result);
+        document.querySelector(".get-details").style.display = "none";
+        if (response.ok)
+         {
+            fetchUserProfile();
+            alert("Profile created successfully!");
+            // localStorage.setItem("userProfile", JSON.stringify(result.userProfile));
+         
+            localStorage.setItem("userProfile", JSON.stringify(result.userprofiles))
+         }
+         
+// fetchUserProfile(userprofiles.f_name,userprofiles.l_name,userprofiles.email,userprofiles.phone);
+// fetchUserProfile();
+}
+    catch(error){
+        console.error("Fetch Error:", error);
+        alert("Something went wrong. Please try again.");
+    }
+});
+/***this one is crt*/
+async function fetchUserProfile() {
+    const token = localStorage.getItem("token");
+    if (!token) {
+        console.error("Error: No token found! User is not authenticated.");
+        alert("User is not authenticated!");
+        return;
+    }
+
+    console.log("Token before fetch:", token);
+
+    try {
+        const response = await fetch("http://localhost:3600/user/profile", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + token
+            }
+        });
+
+        console.log("Raw Response:", response);
+        console.log("Response Status:", response.status);
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error("API Error Response:", errorText);
+            throw new Error(`Failed to fetch profile. Status: ${response.status}`);
+        }
+
+        // Parse response only once
+        const userProfile = await response.json();
+        console.log("Fetched profile:", userProfile);
+// Check if required fields exist
+if (!userProfile.f_name || !userProfile.l_name || !userProfile.email || !userProfile.phone) {
+            console.error("Error: Missing user profile fields", userProfile);
+            alert("Profile data is incomplete.");
+            return;
+        }
+
+        // Store profile in localStorage
+        localStorage.setItem("addProfile", JSON.stringify(userProfile));
+
+        // Update the UI with user details
+        document.querySelector(".profile-store").style.display = "block";
+        document.querySelector(".hrline").style.display = "block";
+        document.querySelector(".hrlines").style.display = "block";
+        document.querySelector(".show-item-section").style.display = "block";
+        document.querySelector(".logout").style.display = "block";
+
+        // Use API response instead of function parameters
+        // document.querySelector(".input-details1 p").textContent = `${userProfile.f_name} ${userProfile.l_name}`;
+        // document.querySelector(".input-details2 p").textContent = userProfile.email;
+        // document.querySelector(".input-details3 p").textContent = userProfile.phone;
+        // document.querySelector(".input-details1 p").textContent = `${fname} ${lname}`;
+        // document.querySelector(".input-details2 p").textContent = email;
+        // document.querySelector(".input-details3 p").textContent = phone;
+ // Check if elements exist before updating them
+ let nameElement = document.querySelector(".input-details1 p");
+        let emailElement = document.querySelector(".input-details2 p");
+        let phoneElement = document.querySelector(".input-details3 p");
+
+        if (nameElement) nameElement.textContent = `${userProfile.f_name} ${userProfile.l_name}`;
+        if (emailElement) emailElement.textContent = userProfile.email;
+        if (phoneElement) phoneElement.textContent = userProfile.phone;
+
+        alert("Profile fetched successfully!");
+    } catch (error) {
+        console.error("Error fetching Profile:", error);
+        alert("Could not retrieve profile details.");
+    }
+}
+/****/
+function validateInputs() {
+    const firstNameVal = firstName.value.trim();
+    const lastNameVal = lastName.value.trim();
+    const emailVal = email.value.trim();
+    const numberVal = number.value.trim();
+    let success = true;
+
+    if (firstNameVal === '') {
+        success = false;
+        setError(firstName, 'First Name is required');
+    } else {
+        setSuccess(firstName);
+    }
+
+    if (lastNameVal === '') {
+        success = false;
+        setError(lastName, 'Last Name is required');
+    } else {
+        setSuccess(lastName);
+    }
+
+    if (emailVal === '') {
+        success = false;
+        setError(email, 'Email is required');
+    } else if (!validateEmail(emailVal)) {
+        success = false;
+        setError(email, 'Please enter a valid Gmail ID');
+    } else {
+        setSuccess(email);
+    }
+
+    if (!/^\d{10}$/.test(numberVal)) {
+        success = false;
+        setError(number, 'Enter a valid 10-digit number');
+    } else {
+        setSuccess(number);
+    }
+
+    return success;
+}
+
+function setError(element, message) {
+    var inputGroup = element.parentElement;
+    var errorElement = inputGroup.querySelector('.error');
+    errorElement.innerText = message;
+    inputGroup.classList.add('error'); 
+    inputGroup.classList.remove('success'); 
+}
+
+function setSuccess(element) {
+    var inputGroup = element.parentElement;
+    var errorElement = inputGroup.querySelector('.error');
+    errorElement.innerText = '';
+    inputGroup.classList.remove('error'); 
+    inputGroup.classList.add('success'); 
+}
+
+const validateEmail = (email) => /^[a-zA-Z0-9._%-]+@gmail\.com$/.test(email);
+
+function profileRemove(event) {
+    event.preventDefault();
+    document.getElementById("form").reset();
+    let inputs = document.querySelectorAll(".input-group");
+    inputs.forEach(input => {
+        input.classList.remove("error", "success");
+        input.querySelector(".error").innerText = "";
+    });
+    var getDetails = document.querySelector(".get-details");
+    // getDetails.style.display = "none";
+}
+/* profile details is hidded*/
+// Function to edit profile when the pencil icon is clicked
+profileEdit.addEventListener("click", function () {
+    // Show the "get-details" div
+    document.querySelector(".get-details").style.display = "block";
+
+    // Hide the "profile-store" div
+    document.querySelector(".profile-store").style.display = "none";
+
+    // Prefill input fields with existing profile details
+    // firstName.value = document.querySelector(".input-details1 p").textContent;
+    // Get full name and split into first and last name
+    let fullName = document.querySelector(".input-details1 p").textContent;
+    let nameParts = fullName.split(" ");  // Splitting first and last name
+    firstName.value = nameParts[0] || ""; // First Name
+    lastName.value = nameParts[1] || "";  // Last Name
+    email.value = document.querySelector(".input-details2 p").textContent;
+    number.value = document.querySelector(".input-details3 p").textContent;
+});
+// cart is open
+function goToCartPage() {
+    let previousPage = localStorage.getItem("previousPage"); // Get the previous page
+ window.location.href = "cartsection.html";  // Navigate to cart
+}
+// address is open
+function goToAddressPage(){
+        
+    let previousPage = localStorage.getItem("previousPage"); // Get the previous page
+ window.location.href = "addaddress.html"; // Scrolls to #cart-section
+ }
+// close full profile screen
+document.getElementById("close-profile").addEventListener("click", function () {
+    window.location.href = "products.html"; // Redirect to products.html
+});
+// order is open
+function goToOrderPage(){
+        
+        let previousPage = localStorage.getItem("previousPage"); // Get the previous page
+     window.location.href = "orderplaced.html"; // Scrolls to #cart-section
+     }
+
+    function goToProfilePage() {
+    let savedData = localStorage.getItem("userProfile");
+
+    if (savedData) {
+        let user = JSON.parse(savedData);
+
+        // Show the form again for editing
+        document.querySelector(".get-details").style.display = "block";
+        document.querySelector(".profile-store").style.display = "none";
+
+        // Pre-fill input fields with saved user data
+        document.getElementById("f-Name").value = user.firstName;
+        document.getElementById("l-Name").value = user.lastName;
+        document.getElementById("email").value = user.email;
+        document.getElementById("number").value = user.number;
+    }
+}
+function loadCartItems() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let tbody = document.querySelector(".tbody");
+    tbody.innerHTML = ""; // Clear previous content
+
+    if (cart.length === 0) {
+        document.querySelector(".cart-empty").style.display = "block";
+        document.querySelector(".create-table").style.display = "none";
+    } else {
+        document.querySelector(".cart-empty").style.display = "none";
+        document.querySelector(".create-table").style.display = "block";
+
+        cart.forEach((item, index) => {
+            let row = document.createElement("tr");
+            row.innerHTML = `
+                <td><img src="image/${item.name.toLowerCase().replace(/ /g, "-")}.jfif" width="50"></td>
+                <td>${item.name}</td>
+                <td>Rs ${item.price}</td>
+                <td>
+                    <button onclick="changeQuantity(${index}, -1)">-</button>
+                    ${item.quantity}
+                    <button onclick="changeQuantity(${index}, 1)">+</button>
+                </td>
+                <td>Rs ${item.price * item.quantity}</td>
+                <td><button onclick="removeItem(${index})">X</button></td>
+            `;
+            tbody.appendChild(row);
+        });
+    }
+}
+
+// Change quantity function
+function changeQuantity(index, change) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    if (cart[index]) {
+        cart[index].quantity += change;
+        if (cart[index].quantity <= 0) {
+            cart.splice(index, 1);
+        }
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    loadCartItems();
+    updateCartCount();
+}
+
+// Remove item from cart
+function removeItem(index) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    loadCartItems();
+    updateCartCount();
+}
+
+// Load cart items when the page loads
+document.addEventListener("DOMContentLoaded", loadCartItems);
+
+// When navigating to cart from profile.html
+// localStorage.setItem("previousPage", "profile.html");
+// window.location.href = "cartsection.html";
+   
+
+
+//logout
+// function logout() {
+//         localStorage.clear();  // Clears all stored data (e.g., tokens, user info)
+//         sessionStorage.clear(); // Clears session data
+//         window.location.href = "login.html"; // Redirect user to login page
+//     }
+    function logout() {
+        const token = localStorage.getItem("token"); // Get token from local storage
+
+        if (!token) {
+            alert("No user is logged in.");
+            window.location.href = "login.html"; // Redirect to login
+            return;
+        }
+
+        fetch("http://localhost:3500/user/logout", { // Change to your API URL
+            method: "POST",
+            headers: {
+                "Authorization": `Bearer ${token}`,
+                "Content-Type": "application/json"
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.message === "Logged out successfully") {
+                alert("Logout successful!");
+                localStorage.clear();  // Clears all stored data (e.g., tokens, user info)
+                sessionStorage.clear(); // Clears session data
+                window.location.href = "login.html"; // Redirect user to login page
+            } else {
+                alert("Logout failed: " + data.message);
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            alert("An error occurred during logout.");
+        });
+    }
+</script>
+</body>
+</html>
+   

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORDER PLACED</title>
+    <style>
+        *{
+    padding: 0px;
+    margin: 0%;
+}
+
+body{
+    font-family: "Roboto", sans-serif;
+   font-size: larger;
+box-sizing: border-box;
+   }
+
+.profile-status p{
+    color:green;
+    font-size:larger;
+    padding:10px;
+    
+}
+
+.profile-status{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 20px;
+    margin-top: 2px;
+}
+.profile-status i{
+    font-size:larger;
+    cursor: pointer;
+    transition: 0.3s;
+    }
+    .profile-status i:hover{
+        background-color: rgba(128, 128, 128, 0.308);
+        color:black;
+        padding:10px;
+        border-radius: 100%;
+        width:25px;
+    text-align: center;
+    
+    }
+    /* .status-empty{ */
+        /* display:block; */
+    /* }    */
+.status-empty h2{
+    background: rgba(128, 128, 128, 0.205);
+    padding: 1%;
+    margin-top: 2%;
+}
+.status-empty button{
+    background-color: green;
+    color:white;
+    border: none;
+    border-radius: 2px;
+    padding: 20px;
+    margin-top: 3%;
+    text-align: center;
+    margin-left: 5%;
+    cursor: pointer;
+}
+.status-empty button:hover{
+    background:rgba(0, 128, 0, 0.795) ;
+}
+/* .message{ */
+    /* margin-bottom:10%;
+    margin-left:30%;
+    padding-bottom:20%; */
+   /* margin:5% 0px 20% 25%; */
+/*    
+} */
+.message  div{
+    margin-top:2%;
+ color:white;
+ background-color:red;
+ width:50%;
+ display:none;
+ margin:5% 0px 20% 22%;
+ font-size:large;
+ padding:2%;
+ align-items:center;
+ justify-content:center;
+text-align:center;
+border-radius:10px;
+}
+.message .first{
+    display:none;
+}
+.order-container{
+    border:1px solid grey;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 10px;
+} 
+
+.product-container{
+    width:70%;
+    margin:3% 0% 10% 15%;
+
+}
+.product-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border-bottom: 1px solid #ddd; */
+    padding: 10px;
+    margin-bottom: 10px;
+    border:2px solid grey;
+    border-radius: 10px;
+    margin-bottom: 4%;
+}
+
+/* Product Box */
+.product {
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+    text-align: center;
+    width: 200px;
+    margin-left: 5%;
+
+}
+.order-info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* gap: 10px; */
+    border:1px solid green;
+    padding:3%;
+    margin-top: 2%;
+    /* height: min-content; */
+    border-radius: 10px;
+    margin-bottom: 2%;
+    
+}
+
+.date-no {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: bold;
+}
+.product img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px; 
+}
+/* status color is chaged*/
+/* Default text color */
+.status-text {
+    color: #2196F3;
+}
+
+/* Status Colors */
+.status-text.status-Accepted {
+    color: #FF9800;
+}
+
+.status-text.status-Shipped {
+    color: #9C27B0;
+}
+
+.status-text.status-Delivered {
+    color: #006400;
+}
+
+.status-text.status-Cancelled {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* .status-cancelled {
+    background-color: #dc3545; 
+    color: white;
+} */
+.status-info h4 {
+    padding-bottom: 2%;
+}
+h4 {
+    margin: 5px 0;
+} 
+.cancelled{
+    margin-left: 80%;
+    padding-bottom: 1%;
+    font-weight: bold;
+    color:red ;
+    font-size: larger;
+    cursor: pointer;
+}
+.cancelled:hover{
+    text-decoration: underline;
+}
+   </style>
+   <!--google icons-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!--font awesome icons-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
+</head>
+<body>
+    <div class="status">
+        <div class="profile-status">
+            <i class="fa fa-angle-left" onclick="closeProfileStatus()" aria-hidden="true" ></i>
+            <p>ORDER TRACKING</p>  
+        </div>
+        <hr class="line">
+        <div class="status-empty">
+            <h2>No Order is Here</h2>
+            <button onclick="window.location.href='products.html'">Return To Shop</button>
+        </div>
+        <div class="order-statuss">
+            
+        </div>
+     </div>
+
+
+    <script>
+        //close profile
+function closeProfileStatus(){
+    window.location.href="profileshow.html";
+}
+// order status
+
+document.addEventListener("DOMContentLoaded", orderstatuscheck);
+async function orderstatuscheck() {
+    const token = localStorage.getItem("token");
+    if (!token) {
+        alert("User not authenticated! Please log in.");
+        window.location.href = "login.html";  
+        return;
+    }
+
+    try {
+    const response = await fetch("https://bloomtrack-herbal-plant-e-commerce.onrender.com/user/order",
+        // const response = await fetch("http://localhost:3600/user/order",
+         {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + token
+            }
+        });
+       
+        if (response.ok) {
+            const orders = await response.json();
+            const orderStatusContainer = document.querySelector(".order-statuss");
+
+            if (!orderStatusContainer) {
+                console.error("Parent container '.order-statuss' not found.");
+                return;
+            }
+console.log(orders)
+            // Optionally clear existing content
+            // orderStatusContainer.innerHTML = "";
+
+            orders.forEach(order => {
+                const responseDate = new Date(order.date);
+                const dateOnly = responseDate.toISOString().split("T")[0];
+                document.querySelector(".status-empty").style.display = "none";
+                // Create the order container
+                const div = document.createElement("div");
+                console.log(order._id);
+                div.classList.add("order-container");
+                div.innerHTML = `
+                    <div class="order-status">
+                        ${order.orderItems.map(item => `
+                            <div class="product-container">
+                                <div class="product">
+                                    <img src="${item.productImage}" alt="Product Image" width="150" height="100">
+                                    <h5 class="h5name">${item.productName}</h5>
+                                </div>
+                                <div class="order-info">
+                                    <div class="date-no">
+                                        <h4>Order No: ${order.invoiceNo}</h4>
+                                        <h4>Date: ${dateOnly}</h4>
+                                    </div>
+                                    <h4>Grand Total: ₹${item.subTotal}</h4>
+                                    <div class="status-info">
+                                        <h4>State: ${order.billingAddress.state}</h4>
+                                        <h4 class="h4" class="order-status" data-id="${order._id}">
+                                            Status: <span class="status-text ${getStatusClass(order.status)}" >${order.status}</span>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('')}
+                        
+                    </div>
+                 
+                `;
+                //<div class="cancelled">
+                           // <h4>cancelled</h4>
+                        //</div>
+                // Insert the new order container before the first child of orderStatusContainer
+                const firstOrderContainer = orderStatusContainer.firstChild;
+                orderStatusContainer.insertBefore(div, firstOrderContainer);
+            });
+        } else {
+            console.log("No items found.");
+        }
+    } catch (error) {
+        alert("Something went wrong. Please try again.");
+    }
+}
+
+function getStatusClass(status) {
+    switch (status.toLowerCase()) {
+        case "order accepted":
+            return "status-Accepted";
+        case "order shipped":
+            return "status-Shipped";
+        case "order delivered":
+            return "status-Delivered";
+        case "order cancelled":
+            return "status-Cancelled";
+        default:
+            return "";
+    }
+}
+
+// order delivered
+document.addEventListener("DOMContentLoaded", async () => {
+    await orderdelivered();
+});
+async function orderdelivered() {
+    const token = localStorage.getItem("token");
+    if (!token) {
+        console.log("User not logged in!");
+        return;
+    }
+
+    // Get all elements with class 'status-text' where status is 'Order Delivered'
+    const statusElements = document.querySelectorAll(".status-text");
+console.log(statusElements)
+    statusElements.forEach(async (statusElement) => {
+        if (statusElement.innerText.trim() === "Order Delivered") {
+            // Get Order ID dynamically from the closest '.order-status' container
+            const orderContainer = statusElement.closest(".order-status");
+            const oid = orderContainer ? orderContainer.getAttribute("data-id") : null;
+console.log(oid);
+            if (!oid) {
+                console.error("Order ID not found!");
+                return;
+            }
+
+            console.log("Order ID:", oid);
+            console.log("Current Order Status:", statusElement.innerText.trim());
+
+            try {
+                const response = await fetch(`https://bloomtrack-herbal-plant-e-commerce.onrender.com/order/status/${oid}`,
+                // const response = await fetch(`http://localhost:3600/order/status/${oid}`,
+                 {
+                    method: "PATCH",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": "Bearer " + token
+                    },
+                    body: JSON.stringify({
+                        status: "Order Delivered",
+                        isDelivered: true
+                    })
+                });
+
+                if (response.ok) {
+                    console.log("Order marked as delivered.");
+                    statusElement.classList.add("delivered");
+                } else {
+                    console.error("Order not updated.");
+                }
+            } catch (error) {
+                console.error("Error updating order:", error);
+            }
+        }
+    });
+}
+
+    </script>
+</body>
+</html>
+

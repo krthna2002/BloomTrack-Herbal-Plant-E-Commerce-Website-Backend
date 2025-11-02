@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COLLECTIOM</title>
+    <style>
+        *{
+    padding: 0px;
+    margin: 0%;
+}
+
+body{
+    font-family: "Roboto", sans-serif;
+   font-size: larger;
+box-sizing: border-box;
+   }
+   .navbar{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+align-items: center;
+padding-top: 2%;
+padding-bottom: 2%;
+}
+.navbar h1{
+    padding-top: 10px;
+    color: green;
+}
+.navbar-links-img{
+    display: flex;
+    flex-direction: row;
+    column-gap: 15px;
+    
+}
+/*product-items*/
+.navbar-items{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 20px;
+   padding-left: 43%;
+  white-space: nowrap;
+
+}
+.navbar-items a{
+    color:green;
+text-decoration: none;
+}
+.navbar-items a:hover{
+    background-color:green;
+    color:white;
+   padding: 5px 10px;
+  border-radius: 10%;
+  
+}
+.orders {
+color:green;
+white-space: nowrap;
+cursor: pointer;
+}
+.orders p:hover{
+background-color:green;
+color:white;
+padding: 5px;
+  border-radius: 10px;
+  
+}
+/*select products*/
+
+.select {
+    padding: 10px; 
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: medium;
+    border: none;
+    background-color:green;
+    color: white;
+ 
+}
+/*cart section*/
+.cart-header{
+    position: relative;
+    margin-left: 10px;
+}
+.cart-header span{
+    font-size: 27px;
+    position: absolute;
+    top:-5px;
+    left:40px;
+    color:red;
+    
+}
+
+.cart-header i{
+    background-color: green;
+color: white;
+
+padding: 40%;
+width: 100%;
+font-size: 25px;
+border-radius:100%;
+cursor: pointer;
+}
+.cart-header i:hover{
+    background-color: white;
+   color: green;
+}
+/*side nave menu*/
+.navbar-menu-toggle{
+    display:none;
+    font-size: 25px;
+    
+    margin-right: 10px;
+}
+.navbar-menu-toggle:hover{
+    cursor: pointer;
+
+}
+
+/*discount*/
+.discount{
+ 
+    margin-top: 30px;
+    color: gold;
+    /* 
+    background-color: black;  Background color so text remains visible     padding: 10px;
+    */
+    /* Some padding for better visibility */
+}
+
+/*side navbar*/
+.side-navbar{
+    width:60%;
+    position: fixed;
+    background-color:green;
+    color: white;
+    height: 100%;
+    top: 0%;
+    left:-60%;
+    transition: 3s;
+    z-index: 1000;
+}
+.side-navbar .bar{
+    margin: 7%;
+    text-align: right;
+    
+}
+.bar:hover{
+    cursor: pointer;
+   
+}
+.side-navbar-links{
+    display: flex;
+    flex-direction: column;}
+    .side-navbar-links div{   
+    padding-top:10%;
+    
+    margin-left: 20%;
+}
+.side-navbar-links a{
+text-decoration: none;
+color:white
+}
+.order p{
+    cursor: pointer;
+}
+.order p:hover{
+    background-color: white;
+    color:green;
+    width:50%;
+    padding: 3%;
+    border-radius: 10px;
+}
+
+.side-navbar-links a:hover{
+   background-color: white;
+    color:green;
+    padding: 3%;
+    border-radius: 10px;
+
+}
+.side-navbar-links select{
+    background-color: white;
+    color:green
+}
+/*product-search-section*/
+.product-search-section{
+    margin-top: 20px;
+ }
+
+ .product-search{
+  display: flex;
+  width:80%;
+  border:solid black 2px;
+  border-radius: 10px;
+  flex-direction: row;
+   padding: 10px;
+   justify-content: space-between;
+   align-items: center;
+   margin:auto;
+   
+}
+.product-search input{
+    border:none;
+    background-color: transparent;
+    width:650%;
+    padding:5px;
+    font-size: 20px;
+
+}
+.product-search input::placeholder{
+    color: green;
+}
+.product-search input:focus{
+    outline: none;
+}
+
+.product-search i {
+     /* Space between the input and the icon */
+    font-size: 18px;    /* Adjust size of the icon */
+    color: #333;
+}
+/*herbal plant*/
+
+
+.products button{
+    background-color:#1cca22;
+    color:white;
+    padding: 4%;
+    border:none;
+    width:80%;
+    margin-bottom: 3%;
+    margin-left: 10%;
+    font-size:large;
+    cursor: pointer;
+
+}
+.products button:hover{
+background-color:#1cca225b ;
+color: black;
+}
+
+.products h3{
+    color:#004D00;
+    padding-left: 2%;
+}
+.products h4,p{
+    padding-left: 2%;
+}
+.product-title h4{
+    color: #004D00;
+    margin-bottom: 1%;
+}
+.product-item{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 60px;
+   
+}
+.product-title-head{
+    margin-top: 50px;
+}
+.products{
+    margin-top: 20px;
+    width:22.3%;
+    border:3px solid #ccc; 
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.products-container{
+    margin-bottom:4%;
+}
+/*media query*/
+@media screen and (max-width: 600px) {
+    .navbar-menu-toggle {
+        display: block;
+ margin-left: 20px;
+ font-size: larger;
+    }
+
+    .navbar-items{
+        display: none;
+    }
+    .navbar{
+    gap:30px;}
+    .cart-header{
+   margin-left: 0px;
+}
+.product-item{
+   flex-direction: column; 
+   gap: 10px;
+   flex-wrap: wrap;
+  
+}
+.products{
+    flex-basis: 20px;
+    flex-grow: 1;
+    margin-left: 20%;
+    width: 62.4%;
+  
+}
+}
+</style>
+     <!--google icons-->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ 
+     <!--font awesome icons-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
+ </head>
+<body>
+     <!--HOME PAGE-->
+<div class="home-page">
+            <!--title-->
+    <nav class="navbar">
+        <div class="navbar-links-img">
+            <h1>Bloomtrack Plant</h1>
+            <img src="image/logo.png" width="70" height="60">
+        </div>   
+       <!--product items-->
+       <div class="navbar-items">
+            <div>
+                <p><a href="home1.html">Home</a></p> 
+            </div>
+            <div class="orders">
+                <p onclick="openProfile()">My Profile</p>
+            </div>
+            <div>
+                <select class="select" id="product-category" onchange="filterProducts()">
+                    <option value="all">All Products</option>
+                    <option value="Herbal-plant">Herbal Plant</option>
+                    <option value="Herbal-flower">Herbal Flower</option>
+                    <option value="Herbal-seed">Herbal Seed</option>
+                </select>
+            </div>
+        <!--my order item-->
+            </div> 
+                <div class="cart-header" onclick="showCart()">
+                     <i class="fa-solid fa-cart-shopping"></i>
+                     <span id="cart-count">0</span>
+                </div>
+            <div>
+            <div class="navbar-menu-toggle" onclick="showNavbar()">
+            <!----font awesome bars icons use---->
+                <i class="fa-solid fa-bars"></i>
+             </div>
+        </div> 
+    </nav>
+    <!--side navbar-->
+    <div class="side-navbar">
+        <p class="bar" onclick="closeNavbar()"><i class="fa-solid fa-xmark"></i></p>
+        <div class="side-navbar-links">
+            <div>
+              <p ><a href="home1.html">Home</a></p> 
+            </div>
+            <div>
+              
+                <select class="select" id="product-category" onchange="filterProducts()">
+                      <option value="all">All Products</option>
+                      <option value="Herbal-plant">Herbal Plant</option>
+                      <option value="Herbal-flower">Herbal Flower</option>
+                      <option value="Herbal-seed">Herbal Seed</option>
+                </select>
+              
+            </div>  
+            <div class="order">
+               <p onclick="openProfile()">My Profile</p>
+            </div>
+        </div>
+    </div>
+  <!--discount-->
+    <div class="discount">
+        <marquee behavior="scroll" direction="LEFT">
+           DISCOUNT 10%  FOR SUMMER SALES...PURCHASE IMMEDIATELY TO CREATE A OWN GARDEN IN YOUR PLACE
+        </marquee>
+    </div>
+    <!--product search-->
+    <div class="product-search-section">
+        <form class="product-search">
+        
+         <input type="text" id="search-product" placeholder="Search products..." onkeyup="searchProducts()">
+
+         <i class="fa-solid fa-magnifying-glass"></i></form>
+    </div>
+    <!--product items-->
+    <div id="products-container">
+        <div class="product-title-head">
+            <div class="product-title">
+                <h4>HERBAL PLANTS</h4>
+                <p style="padding-left: 2%;">Herbal plants, or herbs, are used to treat a variety of conditions, including pain,inflammation, and other health concerns.</p>
+            </div>
+            <div class="product-item"  class="product-container">
+                <div class="products herbal-plant">
+                    <img src="image/tulsi-plant.jpg" width="300" height="250">
+                    <h3>Tulsi/Holy-Basil Plant</h3>
+                    <h4><span style="color:black;padding-right: 5px;">Rs 120</span><del><small><span style="color:grey;"> Rs 150 <span></small></del> </h4>
+                    <button onclick="addToCart('Tulsi/Holy-Basil Plant',120,'image/tulsi-plant.jpg')" id = "add-to-cart" >ADD TO CART</button>
+                </div>
+            <!--product 2-->
+                <div class="products herbal-plant">
+                    <img src="image/Neemplant.jpg" width="300" height="250">
+                
+                    <h3>Neem Plant</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 200</span><del><small><span style="color:grey;"> Rs 200 <span></small></del> </h4>
+                   
+                    <button onclick="addToCart('Neem Plant',200,'image/Neemplant.jpg')" id="add-to-cart">ADD TO CART</button>
+                
+                </div>
+            <!--product 3-->
+                <div class="products herbal-plant">
+                    <img src="image/mint.jfif" width="300" height="250">
+               
+                    <h3>Mint/Pudina</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 100</span><del><small><span style="color:grey;"> Rs 150 <span></small></del> </h4>
+                    <button onclick="addToCart('Mint/pudina',100,'image/mint.jfif')" id="add-to-cart">ADD TO CART</button>
+                
+                </div>
+            <!--produc t 4-->
+                <div class="products herbal-plant">
+                    <img src="image/aloe vera.jfif" width="300" height="250">
+                
+                    <h3>Aloe Vera</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 150</span><del><small><span style="color:grey;"> Rs 200 <span></small></del> </h4>
+                    <button onclick="addToCart('Aloe Vera',150,'image/aloe vera.jfif')"  id="add-to-cart">ADD TO CART</button>
+                
+                </div>
+            <!--product 5-->
+                <div  class="products herbal-plant">
+                    <img src="image/curry-leaves.jfif" width="300" height="250">
+                
+                    <h3>Green Curry Leaf</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 120</span><del><small><span style="color:grey;"> Rs 140 <span></small></del> </h4>
+                    <button onclick="addToCart('Green Curry Leaf',120,image/curry-leaves.jfif)"  id="add-to-cart">ADD TO CART</button>
+                
+                </div>
+            <!--product 6-->
+                <div class="products herbal-plant">
+                    <img src="image/ginger.jfif" width="300" height="250">
+                
+                      <h3>Ginger Plant</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 220</span><del><small><span style="color:grey;"> Rs 120 <span></small></del> </h4>                
+                    <button onclick="addToCart('Ginger plant',220)"  id="add-to-cart">ADD TO CART</button>
+                
+                </div>
+                 <!--product 7-->
+                 <div class="products herbal-plant">
+                    <img src="image/omavalli.jfif" width="300" height="250">
+                
+                    <h3>Karpooravalli/Omavalli</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 170</span><del><small><span style="color:grey;"> Rs 300 <span></small></del> </h4>                
+                    <button onclick="addToCart('Karpooravalli/Omavalli',170)"  id="add-to-cart">ADD TO CART</button>
+                
+                </div>
+                  <!--product 8-->
+                  <div class="products herbal-plant">
+                    <img src="image/kidney stone.webp" width="300" height="250">
+                
+                    <h3>Kalanchoe pinnata, Kidney Stone Plant</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 208</span><del><small><span style="color:grey;"> Rs 300 <span></small></del> </h4>                
+                    <button onclick="addToCart('Kalanchoe pinnata, Patharchatta, Kidney Stone Plant, Dard paat',208)"  id="add-to-cart">ADD TO CART</button>
+                
+                </div>
+                   <!--product 9-->
+                   <div class="products herbal-plant">
+                    <img src="image/lemongrass.jfif" width="300" height="250">
+                
+                    <h3>Lemongrass plant</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 350</span><del><small><span style="color:grey;"> Rs 420 <span></small></del> </h4>                
+                    <button onclick="addToCart('Lemongrass plant',350)"  id="add-to-cart">ADD TO CART</button>
+                
+                </div>
+                 <!--product 10-->
+                 <div class="products herbal-plant">
+                    <img src="image/rosemary1.jfif" width="300" height="250">
+                
+                    <h3>Rosemary plant</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 220</span><del><small><span style="color:grey;"> Rs 120 <span></small></del> </h4>                
+                    <button onclick="addToCart('Rosemary plant',220)"  id="add-to-cart">ADD TO CART</button>
+                
+                </div>
+                
+                 <!--product 11-->
+                 <div class="products herbal-plant">
+                    <img src="image/keelanelli.jfif" width="300" height="250">
+                
+                    <h3>Keezhanelli Plant</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 120</span><del><small><span style="color:grey;"> Rs 150 <span></small></del> </h4>                
+                    <button onclick="addToCart('Keezhanelli/keelanelliPlant',120)"  id="add-to-cart">ADD TO CART</button>
+                
+                </div>
+                 <!--product 12-->
+                 <div class="products herbal-plant">
+                    <img src="image/Pipli-Long pepper.jfif" width="300" height="250">
+                
+                    <h3> Pipli-Long pepper Plant</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 220</span><del><small><span style="color:grey;"> Rs 120 <span></small></del> </h4>                
+                    <button onclick="addToCart('Pipli-Long pepper Plant',220)"  id="add-to-cart">ADD TO CART</button>
+                
+                </div>
+                <!--finish-->
+                <!--product 13-->
+                <div class="products herbal-plant">
+                    <img src="image/kuppaimeni.jpg" width="300" height="250">
+                
+                    <h3>kuppaimeni Plant</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 120</span><del><small><span style="color:grey;"> Rs 150 <span></small></del> </h4>                
+                    <button onclick="addToCart('kuppaimeni Plant',220)"  id="add-to-cart">ADD TO CART</button>
+                
+                </div>
+                <!--product 14-->
+                <div class="products herbal-plant">
+                    <img src="image/Turmeric plant.jfif" width="300" height="250">
+                
+                    <h3>Turmeric Plant</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 220</span><del><small><span style="color:grey;"> Rs 120 <span></small></del> </h4>                
+                    <button onclick="addToCart('Turmeric Plant',220)"  id="add-to-cart">ADD TO CART</button>
+                
+                </div>
+                <!--product 15-->
+                <div class="products herbal-plant">
+                    <img src="image/thuthuvalai.jfif" width="300" height="250">
+                
+                    <h3>Thuthuvalai plant</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 220</span><del><small><span style="color:grey;"> Rs 120 <span></small></del> </h4>                
+                    <button onclick="addToCart('Thuthuvalai Plant',220)"  id="add-to-cart">ADD TO CART</button>
+                
+                </div>
+                <!--product 16-->
+                <div class="products herbal-plant">
+                    <img src="image/chinesse money plant.jfif" width="300" height="250">
+                
+                    <h3>Chinese Money Plant</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 320</span><del><small><span style="color:grey;"> Rs 400 <span></small></del> </h4>                
+                    <button onclick="addToCart('Chinese Money Plant',320)"  id="add-to-cart">ADD TO CART</button>
+                
+                </div>
+                <!--product 17-->
+                <div class="products herbal-plant">
+                    <img src="image/fenugreek.jfif" width="300" height="250">
+                
+                    <h3>Fenugreek Plant</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 220</span><del><small><span style="color:grey;"> Rs 120 <span></small></del> </h4>                
+                    <button onclick="addToCart('Fenugreek Plant',220)"  id="add-to-cart">ADD TO CART</button>
+                
+                </div>
+                <!--product 18-->
+                <div class="products herbal-plant">
+                    <img src="image/THYME.jfif" width="300" height="250">
+                
+                    <h3>Thyme Plant</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 220</span><del><small><span style="color:grey;"> Rs 120 <span></small></del> </h4>                
+                    <button onclick="addToCart('Thyme Plant',220)"  id="add-to-cart">ADD TO CART</button>
+                
+                </div>
+                <!--product 19-->
+                <div class="products herbal-plant">
+                    <img src="image/amruthaballi.jfif" width="300" height="250">
+                
+                    <h3>Amruthaballi Plant</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 220</span><del><small><span style="color:grey;"> Rs 120 <span></small></del> </h4>                
+                    <button onclick="addToCart('Amruthaballi Plant',220)"  id="add-to-cart">ADD TO CART</button>
+                
+                </div>
+                <!--product 19-->
+                <div class="products herbal-plant">
+                    <img src="image/AMALA1.jfif" width="300" height="250">
+                
+                    <h3>Amala</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 220</span><del><small><span style="color:grey;"> Rs 120 <span></small></del> </h4>                
+                    <button onclick="addToCart('Amala Plant',220)"  id="add-to-cart">ADD TO CART</button>
+                
+                </div>
+                <!--product 19-->
+                <div class="products herbal-plant">
+                    <img src="image/pirandai.jfif" width="300" height="250">
+                
+                    <h3>Pirandai</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 220</span><del><small><span style="color:grey;"> Rs 120 <span></small></del> </h4>                
+                    <button onclick="addToCart('Pirandai Plant',220)"  id="add-to-cart">ADD TO CART</button>
+                
+                </div>
+                 <!--product close-->
+            </div>
+        </div>
+        <!--2 herbal flower-->
+        <div class="product-title-head">
+            <div class="product-title">
+                <h4>HERBAL FLOWER</h4>
+                <p style="padding-left: 2%;">
+                The theory of dietary herbal medicine is a key part of traditional Chinese medicine.
+                Herbal flowers are used to prevent and treat a variety of diseases.
+                is needed to improve the safety and effectiveness of dietary herbal medicines
+                </p>
+            </div> 
+            <div class="product-item">
+                <div class="products herbal-flower">
+                    <img src="image/hihiscus1.jfif" width="300" height="250">
+                    <h3>Hibiscus Flower</h3>
+                    <h4><span style="color:black;padding-right: 5px;">Rs 250</span><del><small><span style="color:grey;"> Rs 300 <span></small></del> </h4>
+                    <p><b>Size:</b><span> 100g </span></p>
+                    <button onclick="addToCart('Hibiscus Live Flower',250)" id="add-to-cart" >ADD TO CART</button>
+                </div>
+                <!--product 2-->
+                <div class="products herbal-flower">
+                    <img src="image/sangupushpam1.jfif" width="300" height="250">
+                    <h3>Sangupushpam/Butterfly Pea Flower</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 300</span><del><small><span style="color:grey;"> Rs 350 <span></small></del> </h4>
+                    <p><b>Size:</b><span> 100g </span></p>
+                    <button onclick="addToCart('Sangupushpam Flower',300)"  id="add-to-cart">ADD TO CART</button>
+                </div>
+                <!--product 3-->
+                <div class="products herbal-flower">
+                    <img src="image/sadhapushpam.jpg" width="300" height="250">
+                    <h3>sadapushpam Flower</h>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 200</span><del><small><span style="color:grey;"> Rs 280 <span></small></del> </h4>
+                    <p><b>Size:</b><span> 100g </span></p>
+                    <button onclick="addToCart('sadapushpamFlower',200)"  id="add-to-cart">ADD TO CART</button>
+                    
+                </div>
+                <!--product 4-->
+                <div class="products herbal-flower">
+                    <img src="image/erythirna variegata.jfif" width="300" height="250">
+                    <h3>Erythirna Variegata Flower</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 320</span><del><small><span style="color:grey;"> Rs 450 <span></small></del> </h4>
+                    <p><b>Size:</b><span> 100g </span></p>
+                    <button onclick="addToCart('Erythirna Variegata Flower',320)"  id="add-to-cart">ADD TO CART</button>
+                </div>
+                <!--product 5-->
+                <div class="products herbal-flower">
+                    <img src="image/kannikonna.jfif" width="300" height="250">
+                    <h3>kanikonna Flower</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 150</span><del><small><span style="color:grey;"> Rs 200 <span></small></del> </h4>
+                    <p><b>Size:</b><span> 100g </span></p>
+                    <button onclick="addToCart('kanikonna Flower',150)"  id="add-to-cart">ADD TO CART</button>
+                </div>
+                <!--product 6-->
+                <div class="products herbal-flower">
+                    <img src="image/thumba.jfif" width="300" height="250">
+                    <h3>Thumba Flower</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 100</span><del><small><span style="color:grey;"> Rs 120 <span></small></del> </h4>
+                    <p><b>Size:</b><span> 100g </span></p>
+                    <button onclick="addToCart('Thumba Flower',100)"  id="add-to-cart">ADD TO CART</button>
+                </div>
+                <!--product 7-->
+                <div class="products herbal-flower">
+                    <img src="image/KANTHAL.jfif" width="300" height="250">
+                    <h3>Kanthal Flower</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 120</span><del><small><span style="color:grey;"> Rs 150 <span></small></del> </h4>
+                    <p><b>Size:</b><span> 100g </span></p>   
+                    <button onclick="addToCart('Kanthal Flower',120)"  id="add-to-cart">ADD TO CART</button>
+                </div>
+                <!--product 8-->
+                <div class="products herbal-flower">
+                    <img src="image/hyssop1.jfif" width="300" height="250">
+                    <h3>Hyssop Flower</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 150</span><del><small><span style="color:grey;"> Rs 200 <span></small></del> </h4>
+                    <p><b>Size:</b><span> 100g </span></p>
+                    <button onclick="addToCart('Hyssop Flower',150)"  id="add-to-cart">ADD TO CART</button>
+                </div>
+                <!--product 9-->
+                <div class="products herbal-flower">
+                    <img src="image/dried lavender.jpg" width="300" height="250">
+                    <h3>Dried Lavender Flower</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 100</span><del><small><span style="color:grey;"> Rs 120 <span></small></del> </h4>
+                    <p><b>Size:</b><span> 100g </span></p>
+                    <button onclick="addToCart('Dried Lavender Flower',100)"  id="add-to-cart">ADD TO CART</button>
+                </div>
+                <!--product 10-->
+                <div class="products herbal-flower">
+                    <img src="image/hibiscus dried.jfif" width="300" height="250">
+                    <h3>Dried Hibiscus Flower</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 100</span><del><small><span style="color:grey;"> Rs 120 <span></small></del> </h4>
+                    <p><b>Size:</b><span> 100g </span></p>
+                    <button onclick="addToCart('Dried Hibiscus Flower',100)"  id="add-to-cart">ADD TO CART</button>
+                </div>
+                <!--product 11-->
+                <div class="products herbal-flower">
+                    <img src="image/dried butterbly pea.jfif" width="300" height="250">
+                    <h3>Dried Sangupushpam/Butterfly Pea Flower</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 100</span><del><small><span style="color:grey;"> Rs 120 <span></small></del> </h4>
+                    <p><b>Size:</b><span> 100g </span></p>
+                    <button onclick="addToCart('Dried Sangupushpam/Butterfly Pea Flower',100)"  id="add-to-cart">ADD TO CART</button>
+                </div>
+                <!--product 12-->
+                <div class="products herbal-flower">
+                    <img src="image/yellow hued.jfif" width="300" height="250">
+                    <h3>Yellow Hued Flower</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 100</span><del><small><span style="color:grey;"> Rs 120 <span></small></del> </h4>
+                    <p><b>Size:</b><span> 100g </span></p>
+                    <button onclick="addToCart('Yellow Hued Flower',100)"  id="add-to-cart">ADD TO CART</button>
+                </div>
+                <!--product close-->
+            </div>
+        </div>
+        <!--3herbal seed-->
+        <div class="product-title-head">
+            <div class="product-title">
+               <h4>HERBAL SEED</h4>
+               <p style="padding-left: 2%;">
+                The seed is the embryonic stage of the plant life cycle. Most seeds consist of three parts: embryo, endosperm, and seed coat. The embryo is a tiny plant that has a root, a stem, and one or more leaves. The endosperm is the nutritive tissue of the seed, often a combination of starch, oil, and protein.
+               </p>
+            </div> 
+            <div class="product-item">
+                <div class="products">
+                    <img src="image/neem seed.jfif" width="300" height="250">
+                    <h3>Neem Seed</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 220.00</span><del><small><span style="color:grey;"> Rs 350 <span></small></del> </h4>
+                    <p><b>Size:</b><span> 200g (Pack of 1)</span></p>
+                    <button onclick="addToCart('Neem Seed',220)" id="add-to-cart" >ADD TO CART</button>
+                </div>
+                <!--product 2-->
+                <div class="products">
+                    <img src="image/sunflower seed.jfif" width="300" height="250">
+                    <h3>sunflower Seed</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 140</span><del><small><span style="color:grey;"> Rs 250 <span></small></del></h4>
+                    <p><b>Size:</b><span> 200g (Pack of 1)</span></p>
+                    <button onclick="addToCart('sunflower Seed',140)"  id="add-to-cart">ADD TO CART</button>
+                </div>
+                <!--product 3-->
+                <div class="products herbal-seed">
+                    <img src="image/Watermelon seed.jfif" width="300" height="250">
+                    <h3>Watermelon Seed</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 300</span><del><small><span style="color:grey;"> Rs 280 <span></small></del> </h4>
+                    <p><b>Size:</b><span> 250g (Pack of 1)</span></p>
+                    <button onclick="addToCart('Watermelon Seed',300)"  id="add-to-cart">ADD TO CART</button>
+                </div>
+                <!--product 4-->
+                <div class="products herbal-seed">
+                    <img src="image/sabja seed.jfif" width="300" height="250">
+                    <h3>Sabja Seed</h3>
+                    <h4><span style="color:black;padding-right: 5px;">Rs 180</span><del><small><span style="color:grey;"> Rs 250 <span></small></del> </h4>
+                    <p><b>Size:</b><span> 200g (Pack of 1)</span></p>
+                    <button onclick="addToCart('Sabja Seed',180)"  id="add-to-cart">ADD TO CART</button>
+                </div>
+                <!--product 5-->
+                <div class="products herbal-seed">
+                    <img src="image/AMALA.jfif" width="300" height="250">
+                    <h3>Amala Seed</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 250</span><del><small><span style="color:grey;"> Rs 320 <span></small></del> </h4>
+                    <p><b>Size:</b><span> 200g (Pack of 1)</span></p>   
+                    <button onclick="addToCart('Amala Seed',250)"  id="add-to-cart">ADD TO CART</button>
+                </div>
+                <!--product 6-->
+                <div class="products herbal-seed">
+                    <img src="image/flax seed.jfif" width="300" height="250">
+                    <h3>Flax Seed</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 110</span><del><small><span style="color:grey;"> Rs 175 <span></small></del> </h4>
+                    <p><b>Size:</b><span> 200g (Pack of 1)</span></p>
+                    <button   id="add-to-cart">ADD TO CART</button>
+                </div>
+                <!--product 7-->
+                <div class="products">
+                    <img src="image/muskmelon.jfif" width="300" height="250">
+                    <h3>Muskmelon Seed</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 240</span><del><small><span style="color:grey;"> Rs 350 <span></small></del></h4>
+                    <p><b>Size:</b><span> 250g (Pack of 1)</span></p>
+                    <button onclick="addToCart('Muskmelon Seed Seed',240)"  id="add-to-cart">ADD TO CART</button>
+                </div>
+                <!--product 8-->
+                <div class="products">
+                    <img src="image/moringa seed.jfif" width="300" height="250">
+                    <h3>Moringa Seed</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 140</span><del><small><span style="color:grey;"> Rs 200 <span></small></del></h4>
+                    <p><b>Size:</b><span> 200g (Pack of 1)</span></p>
+                    <button onclick="addToCart('Moringa Seed',200)"  id="add-to-cart">ADD TO CART</button>
+                </div>
+                <!--product 9-->
+                <div class="products ">
+                    <img src="image/neermulli-seed.webp" width="300" height="250">
+                    <h3>Neermulli Seed</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 110</span><del><small><span style="color:grey;"> Rs 200 <span></small></del></h4>
+                    <p><b>Size:</b><span> 200g (Pack of 1)</span></p>
+                    <button onclick="addToCart('Neermulli Seed',110)"  id="add-to-cart">ADD TO CART</button>
+                </div>
+                <!--product 10-->
+                <div class="products ">
+                    <img src="image/nilavembu.webp" width="300" height="250">
+                    <h3>Nilavembu Seed</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 140</span><del><small><span style="color:grey;"> Rs 250 <span></small></del></h4>
+                    <p><b>Size:</b><span> 250g (Pack of 1)</span></p>
+                    <button onclick="addToCart('Nilavembu Seed',140)"  id="add-to-cart">ADD TO CART</button>
+                </div>
+                <!--product 11-->
+                <div class="products">
+                    <img src="image/SHIKAKAI.jfif" width="300" height="250">
+                    <h3>Shikakai Seed</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 220</span><del><small><span style="color:grey;"> Rs 270 <span></small></del></h4>
+                    <p><b>Size:</b><span> 200g (Pack of 1)</span></p>
+                    <button onclick="addToCart('Shikakai Seed',220)"  id="add-to-cart">ADD TO CART</button>
+                </div>
+                <!--product 12-->
+                <div class="products">
+                    <img src="image/gongura.jfif" width="300" height="250">
+                    <h3>Gongura/Roselle Seed</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 140</span><del><small><span style="color:grey;"> Rs 250 <span></small></del></h4>
+                    <p><b>Size:</b><span> 200g (Pack of 1)</span></p>
+                    <button onclick="addToCart('Gongura/Roselle Seed',140)"  id="add-to-cart">ADD TO CART</button>
+                </div>
+                <!--product 13-->
+                <div class="products">
+                    <img src="image/lingo.jfif" width="300" height="250">
+                    <h3>Lingo Seed</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 170</span><del><small><span style="color:grey;"> Rs 210 <span></small></del></h4>
+                    <p><b>Size:</b><span> 200g (Pack of 1)</span></p>
+                    <button onclick="addToCart('lingo Seed',170)"  id="add-to-cart">ADD TO CART</button>
+                </div>
+                <!--product 14-->
+                <div class="products">
+                    <img src="image/annato.jfif" width="300" height="250">
+                    <h3>Annatto Seed</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 140</span><del><small><span style="color:grey;"> Rs 250 <span></small></del></h4>
+                    <p><b>Size:</b><span> 200g (Pack of 1)</span></p>
+                    <button onclick="addToCart('Annatto Seed',140)"  id="add-to-cart">ADD TO CART</button>
+                </div>
+                <!--product 15-->
+                <div class="products">
+                    <img src="image/ashwagandha.jfif" width="300" height="250">
+                    <h3>Ashwagandha Seed</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 400</span><del><small><span style="color:grey;"> Rs 650 <span></small></del></h4>
+                    <p><b>Size:</b><span> 200g (Pack of 1)</span></p>
+                    <button onclick="addToCart('Ashwagandha Seed',400)"  id="add-to-cart">ADD TO CART</button>
+                </div>
+                <!--product 16-->
+                <div class="products">
+                    <img src="image/dill.jfif" width="300" height="250">
+                    <h3>Dill Seed</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 140</span><del><small><span style="color:grey;"> Rs 350 <span></small></del></h4>
+                    <p><b>Size:</b><span> 200g (Pack of 1)</span></p>
+                    <button onclick="addToCart('Dill Seed',240)"  id="add-to-cart">ADD TO CART</button>
+                </div>
+                <!--product 17-->
+                <div class="products">
+                    <img src="image/himaj-seeds-1.webp" width="300" height="250">
+                    <h3>Himaj/Hirda Seed</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 180</span><del><small><span style="color:grey;"> Rs 250 <span></small></del></h4>
+                    <p><b>Size:</b><span> 200g (Pack of 1)</span></p>
+                    <button onclick="addToCart('Himaj/Hirda Seed',180)"  id="add-to-cart">ADD TO CART</button>
+                </div>
+                <!--product 18-->
+                <div class="products">
+                    <img src="image/thyme seed.jpg" width="300" height="250">
+                    <h3>Thyme Seed</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 210</span><del><small><span style="color:grey;"> Rs 270 <span></small></del></h4>
+                    <p><b>Size:</b><span> 200g (Pack of 1)</span></p>
+                    <button onclick="addToCart('Thyme Seed',210)"  id="add-to-cart">ADD TO CART</button>
+                </div>
+                <!--product 19-->
+                <div class="products">
+                    <img src="image/rosemarinus seed.jfif" width="300" height="250">
+                    <h3>Rosmarinus Seed</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 240</span><del><small><span style="color:grey;"> Rs 350 <span></small></del></h4>
+                    <p><b>Size:</b><span> 150g (Pack of 1)</span></p>
+                    <button onclick="addToCart('Rosmarinus Seed',240)"  id="add-to-cart">ADD TO CART</button>
+                </div>
+                <!--product 20-->
+                <div class="products">
+                    <img src="image/oregano seed.jfif" width="300" height="250">
+                    <h3>Oregano Seed</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 400</span><del><small><span style="color:grey;"> Rs 450 <span></small></del></h4>
+                    <p><b>Size:</b><span> 200g (Pack of 1)</span></p>
+                    <button onclick="addToCart('Oregano Seed',400)"  id="add-to-cart">ADD TO CART</button>
+                </div>
+                <!--product 21-->
+                <div class="products">
+                    <img src="image/jackfruit.jfif" width="300" height="250">
+                    <h3>Jackfruit Seed</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 140</span><del><small><span style="color:grey;"> Rs 250 <span></small></del></h4>
+                    <p><b>Size:</b><span> 200g (Pack of 1)</span></p>
+                    <button onclick="addToCart('Jackfruit Seed',140)"  id="add-to-cart">ADD TO CART</button>
+                </div>
+                <!--product 22-->
+                <div class="products">
+                    <img src="image/sal.jpeg" width="300" height="250">
+                    <h3>Sal Seed</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 190</span><del><small><span style="color:grey;"> Rs 250 <span></small></del></h4>
+                    <p><b>Size:</b><span> 200g (Pack of 1)</span></p>
+                    <button onclick="addToCart('Sal Seed',190)"  id="add-to-cart">ADD TO CART</button>
+                </div>
+                <!--product 23-->
+                <div class="products">
+                    <img src="image/jathika.jfif" width="300" height="250">
+                    <h3>Nutmeg/Jathika Seed</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 340</span><del><small><span style="color:grey;"> Rs 550 <span></small></del></h4>
+                    <p><b>Size:</b><span> 100g (Pack of 1)</span></p>
+                    <button onclick="addToCart('Nutmeg/Jathika Seed',340)"  id="add-to-cart">ADD TO CART</button>
+                </div>
+                <!--product 24-->
+                <div class="products">
+                    <img src="image/velvet bean.jfif" width="300" height="250">
+                    <h3>Velvet Bean Seed</h3>
+                    <h4><span  style="color:black;padding-right: 5px;">Rs 200</span><del><small><span style="color:grey;"> Rs 250 <span></small></del></h4>
+                    <p><b>Size:</b><span> 200g (Pack of 1)</span></p>
+                    <button onclick="addToCart('Velvet Bean Seed',200)"  id="add-to-cart">ADD TO CART</button>
+                </div>
+            </div>
+        </div> 
+    </div>
+            
+
+
+</div>
+<script>
+   
+    // Select the side navbar
+    var sideNavbar = document.querySelector('.side-navbar');
+    // Function to show the navbar
+    function showNavbar() {
+        sideNavbar.style.left = '0%';
+    }
+    // Function to close the navbar
+    function closeNavbar() {
+        sideNavbar.style.left = '-60%';
+    }
+    //search item
+    //full container
+    var search = document.getElementById("search-product");
+var titleHeads = document.querySelectorAll(".product-title-head");
+
+search.addEventListener("keyup", function () {
+    var filterValue = search.value.toUpperCase();
+    
+    titleHeads.forEach(function (titleHead) {
+        var title = titleHead.querySelector("h4").textContent.toUpperCase();
+        var productItems = titleHead.querySelectorAll(".products"); // All products inside a category
+        var hasVisibleProduct = false; // Flag to track if any product is visible
+
+        productItems.forEach(function (product) {
+            var productName = product.querySelector("h3").textContent.toUpperCase();
+
+            if (productName.indexOf(filterValue) > -1 || title.indexOf(filterValue) > -1) {
+                product.style.display = "block"; // Show matching product
+                hasVisibleProduct = true; // At least one product is visible
+            } else {
+                product.style.display = "none"; // Hide unmatched product
+            }
+        });
+
+        // Show/hide category based on product visibility
+        if (hasVisibleProduct) {
+            titleHead.style.display = "block"; // Show category
+        } else {
+            titleHead.style.display = "none"; // Hide category if no product matches
+        }
+    });
+});
+//select option
+function filterProducts() {
+    let selectedCategory = document.getElementById("product-category").value;
+    let productSections = document.querySelectorAll(".product-title-head");
+
+    productSections.forEach(section => {
+        let categoryTitle = section.querySelector("h4").innerText.toLowerCase().trim();
+
+        let formattedCategory = selectedCategory.replace("-", " ").toLowerCase();
+        
+        // Handle plural cases (e.g., "herbal plant" should match "herbal plants")
+        if (formattedCategory === "herbal plant") {
+            formattedCategory = "herbal plants";
+        } else if (formattedCategory === "herbal flower") {
+            formattedCategory = "herbal flower";
+        } else if (formattedCategory === "herbal seed") {
+            formattedCategory = "herbal seed";
+        }
+
+        if (selectedCategory === "all" || categoryTitle.includes(formattedCategory)) {
+            section.style.display = "block"; // Show matching sections
+        } else {
+            section.style.display = "none"; // Hide unmatched sections
+        }
+    });
+}
+//---------------------------------
+// // cart is increase
+// function addToCart(productName, productPrice) {
+//     let cartCountElement = document.getElementById("cart-count");
+
+//     // Get current cart count from localStorage
+//     let cartCount = localStorage.getItem("cartCount");
+
+//     // Convert to number or set to 0 if null
+//     cartCount = cartCount ? parseInt(cartCount) : 0;
+
+//     // Increase cart count
+//     cartCount++;
+
+//     // Update cart count in localStorage
+//     localStorage.setItem("cartCount", cartCount);
+
+//     // Update UI
+//     cartCountElement.textContent = cartCount;
+
+//     // Store product details in cart (optional)
+//     let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+//     cartItems.push({ name: productName, price: productPrice });
+//     localStorage.setItem("cartItems", JSON.stringify(cartItems));
+// }
+
+
+
+// document.addEventListener("DOMContentLoaded", function () {
+//     let cartCountElement = document.getElementById("cart-count");
+//     let savedCartCount = localStorage.getItem("cartCount");
+
+//     if (savedCartCount) {
+//         cartCountElement.textContent = savedCartCount;
+//     } else {
+//         cartCountElement.textContent = "0"; // Set default to 0
+//     }
+// });
+// //-----
+
+// function showCart() {
+//     window.location.href = "cart-section.html"; // Navigate to cart page
+// }
+// function addToCart(productName, productPrice, productImage) {
+//     let cartCountElement = document.getElementById("cart-count");
+
+//     // Get current cart count from localStorage (parse it safely)
+//     let cartCount = localStorage.getItem("cartCount");
+//     cartCount = cartCount ? parseInt(cartCount) : 0;
+
+//     // Increase cart count by 1
+//     cartCount++;
+
+//     // Update localStorage and UI
+//     localStorage.setItem("cartCount", cartCount);
+//     if (cartCountElement) cartCountElement.textContent = cartCount; // Ensure element exists
+
+//     // Retrieve cart items
+//     let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+//     // Check if the item already exists in the cart
+//     let existingItem = cartItems.find(item => item.name === productName);
+//     if (existingItem) {
+//         existingItem.quantity++; // Increase quantity if already exists
+//     } else {
+//         cartItems.push({ name: productName, price: productPrice, quantity: 1, image: productImage });
+//     }
+
+//     // Save updated cart items to localStorage
+//     localStorage.setItem("cartItems", JSON.stringify(cartItems));
+// }
+
+// // Ensure cart count remains correct on page load
+// document.addEventListener("DOMContentLoaded", function () {
+//     let cartCountElement = document.getElementById("cart-count");
+//     let savedCartCount = localStorage.getItem("cartCount");
+
+//     // Set correct cart count on page load
+//     if (cartCountElement) {
+//         cartCountElement.textContent = savedCartCount ? savedCartCount : "0";
+//     }
+// });
+
+// function showCart() {
+//     window.location.href = "cart-section.html"; // Navigate to cart page
+// }
+
+
+
+// add to cart function
+
+document.addEventListener("DOMContentLoaded", function () {
+    let cartCountElement = document.getElementById("cart-count");
+    let savedCartCount = localStorage.getItem("cartCount");
+    let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+    // If cart is empty, reset count to 0
+    if (cartItems.length === 0) {
+        localStorage.setItem("cartCount", "0");
+        savedCartCount = "0";
+    }
+
+    // Set correct cart count on page load
+    if (cartCountElement) {
+        cartCountElement.textContent = savedCartCount ? savedCartCount : "0";
+    }
+});
+
+function addToCart(productName, productPrice, productImage) {
+    let cartCountElement = document.getElementById("cart-count");
+
+    // Get current cart count from localStorage
+    let cartCount = localStorage.getItem("cartCount");
+    cartCount = cartCount ? parseInt(cartCount) : 0;
+
+    // Increase cart count by 1
+    cartCount++;
+
+    // Update localStorage and UI
+    localStorage.setItem("cartCount", cartCount);
+    if (cartCountElement) cartCountElement.textContent = cartCount; // Ensure element exists
+
+    // Retrieve cart items
+    let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+    // Check if the item already exists in the cart
+    let existingItem = cartItems.find(item => item.name === productName);
+    if (existingItem) {
+        existingItem.quantity++; // Increase quantity if already exists
+    } else {
+        cartItems.push({ name: productName, price: productPrice, quantity: 1, image: productImage });
+    }
+
+    // Save updated cart items to localStorage
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+}
+
+function showCart() {
+    window.location.href = "cartsection.html"; // Navigate to cart page
+}
+
+
+//open profile
+function openProfile(){
+    window.location.href = "profile.html"; // Redirect to the products page
+}
+function showCart() {
+    window.location.href = "cartsection.html";
+}
+// closig section
+// When navigating to cart from products.html
+// localStorage.setItem("previousPage", "products.html");
+// window.location.href = "cartsection.html";
+</script> 
+
+</body>
+</html>

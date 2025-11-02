@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <!--css-->
+    <link rel="stylesheet" href="style.css">
+    <!--google icons-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!--font awesome icons-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
+</head>
+<body>
+    <div class="signup-page">
+        <!--HOME PAGE-->
+        <nav class="navbar">
+            <div class="navbar-links-img">
+                <h1>Bloomtrack plant</h1>
+                <img src="sitelogo.jpg" width="50" height="50">
+            </div>
+            <div class="navbar-links">
+                <p class="navbar-link">
+                    <a href="home1.html"><b>HOME</b></a>
+                </p>
+                <p class="navbar-link">
+                    <a href="login.html"><b>LOGIN</b></a>
+                </p>
+                <p class="navbar-link">
+                    <a href="signup.html"><b>SIGNUP</b></a>
+                </p>
+            </div>
+            <div class="navbar-menu-toggle" onclick="showNavbar()">
+                    <!----font awesome bars icons use---->
+                <i class="fa-solid fa-bars"></i>
+                </div>
+        </nav>
+        <div class="side-navbar">
+            <p class="bar" onclick="closeNavbar()">
+                <i class="fa-solid fa-xmark"></i>
+            </p>
+            <div class="side-navbar-links">
+                <p class="side-navbar-link">
+                    <a href="home1.html"><b>HOME</b></a>
+                </p>
+                <p class="side-navbar-link">
+                    <a href="login.html"><b>LOGIN</b></a>
+                </p>
+                <p class="side-navbar-link">
+                    <a href="signup.html"><b>SIGNUP</b></a>
+                </p>
+            </div>
+        </div>
+        <div class="signup-container">
+            <h1>SIGN UP</h1>
+            <form action=""  id="form">
+                <div class="input-group" >
+                    <input type="text" placeholder="Username" id="username">
+                    <i class="fa-solid fa-user"></i>
+                    <p class="error">
+
+                    </p>
+                </div>
+                <div class="input-group" >
+                    <input type="email" placeholder="Email" id="email">
+                    <i class="fa-solid fa-envelope"></i>
+                    <p class="error"></p>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Password" >
+                    <i class="fas fa-eye" id="showPassword" onclick="togglePassword()"></i>
+                    <p class="error"></p>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="cpassword" placeholder="Confirm-Password" >
+                    <i class="fas fa-eye" id="showPassword1" onclick="togglePassword1()"></i>
+                    <p class="error" id="error-message"></p>
+                </div>
+                
+ 
+                <button id="signup-button" type="submit">SIGN UP</button>
+                <p class="link-page">Existing user? <a href="login.html" id="link">Log in</a></p>
+            </form>
+        </div>
+        
+        <div class="alert-success">
+             <p CLASS="P">SUBMITTED SUCCESSFULLY</p>
+                 <P CLASS="p1" onclick="successmsg()">OK</P>
+         </div>
+        <div class="alert-error" >
+        <p CLASS="P">SOMETHING WENT WRONG. PLEASE CHECK YOUR SERVER.</p>
+             <P CLASS="p1" onclick="errormsg()">OK</P>
+        </div>
+        <div class="alert-error-msg" >
+         <p class="alert-text" CLASS="P"></p>
+             <P CLASS="p1" onclick="seterrormsg()">OK</P>
+        </div>
+
+
+    </div>
+     <script src="signup.js" ></script>
+</body>
+</html>

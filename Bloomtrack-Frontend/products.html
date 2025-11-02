@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>products</title>
+    <style>
+        *{
+    padding: 0px;
+    margin: 0%;
+}
+
+body{
+    font-family: "Roboto", sans-serif;
+   font-size: larger;
+box-sizing: border-box;
+   }
+   .navbar{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+align-items: center;
+padding-top: 2%;
+padding-bottom: 2%;
+}
+.navbar h1{
+    padding-top: 10px;
+    color: green;
+}
+.navbar-links-img{
+    display: flex;
+    flex-direction: row;
+    column-gap: 15px;
+    
+}
+/*product-items*/
+.navbar-items{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 20px;
+   padding-left: 43%;
+  white-space: nowrap;
+
+}
+.navbar-items a{
+    color:green;
+text-decoration: none;
+}
+.navbar-items a:hover{
+    background-color:green;
+    color:white;
+   padding: 5px 10px;
+  border-radius: 10%;
+  
+}
+.orders {
+color:green;
+white-space: nowrap;
+cursor: pointer;
+}
+.orders p:hover{
+background-color:green;
+color:white;
+padding: 5px;
+  border-radius: 10px;
+  
+}
+/*select products*/
+
+.select {
+    padding: 10px; 
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: medium;
+    border: none;
+    background-color:green;
+    color: white;
+ 
+}
+/*cart section*/
+.cart-header{
+    position: relative;
+    margin-left: 10px;
+}
+.cart-header span{
+    font-size: 27px;
+    position: absolute;
+    top:-5px;
+    left:40px;
+    color:red;
+    
+}
+
+.cart-header i{
+    background-color: green;
+color: white;
+
+padding: 40%;
+width: 100%;
+font-size: 25px;
+border-radius:100%;
+cursor: pointer;
+}
+.cart-header i:hover{
+    background-color: white;
+   color: green;
+}
+/*side nave menu*/
+.navbar-menu-toggle{
+    display:none;
+    font-size: 25px;
+    
+    margin-right: 10px;
+}
+.navbar-menu-toggle:hover{
+    cursor: pointer;
+
+}
+
+/*discount*/
+.discount{
+ 
+    margin-top: 30px;
+    color: gold;
+    /* 
+    background-color: black;  Background color so text remains visible     padding: 10px;
+    */
+    /* Some padding for better visibility */
+}
+
+/*side navbar*/
+.side-navbar{
+    width:60%;
+    position: fixed;
+    background-color:green;
+    color: white;
+    height: 100%;
+    top: 0%;
+    left:-60%;
+    transition: 3s;
+    z-index: 1000;
+}
+.side-navbar .bar{
+    margin: 7%;
+    text-align: right;
+    
+}
+.bar:hover{
+    cursor: pointer;
+   
+}
+.side-navbar-links{
+    display: flex;
+    flex-direction: column;}
+    .side-navbar-links div{   
+    padding-top:10%;
+    
+    margin-left: 20%;
+}
+.side-navbar-links a{
+text-decoration: none;
+color:white
+}
+.order p{
+    cursor: pointer;
+}
+.order p:hover{
+    background-color: white;
+    color:green;
+    width:50%;
+    padding: 3%;
+    border-radius: 10px;
+}
+
+.side-navbar-links a:hover{
+   background-color: white;
+    color:green;
+    padding: 3%;
+    border-radius: 10px;
+
+}
+.side-navbar-links select{
+    background-color: white;
+    color:green
+}
+/*product-search-section*/
+.product-search-section{
+    margin-top: 20px;
+ }
+
+ .product-search{
+  display: flex;
+  width:80%;
+  border:solid black 2px;
+  border-radius: 10px;
+  flex-direction: row;
+   padding: 10px;
+   justify-content: space-between;
+   align-items: center;
+   margin:auto;
+   
+}
+.product-search input{
+    border:none;
+    background-color: transparent;
+    width:650%;
+    padding:5px;
+    font-size: 20px;
+
+}
+.product-search input::placeholder{
+    color: green;
+}
+.product-search input:focus{
+    outline: none;
+}
+
+.product-search i {
+     /* Space between the input and the icon */
+    font-size: 18px;    /* Adjust size of the icon */
+    color: hsl(0, 0%, 20%);
+}
+.products .add-to-cart-btn{
+    background-color:#1cca22;
+    color:white;
+    padding: 4%;
+    border:none;
+    width:80%;
+    margin: 3% 0 3% 10%;
+    font-size:large;
+    cursor: pointer;
+
+}
+.products .add-cart{
+background-color:red;
+}
+/* .products.add-to-cart-btn:hover{
+background-color:#1cca225b ;
+color: black;
+} */
+.products .buy-products{
+    color:white;
+    padding: 4%;
+    border:none;
+    width:80%;
+    margin: 3% 0 3% 10%;
+    font-size:large;
+    cursor: pointer;
+    background-color: red;
+}
+.products .buy-products:hover{
+    background-color: green;
+}
+.products h3{
+    color:#004D00;
+    padding-left: 2%;
+}
+.products h4,p{
+    padding-left: 2%;
+}
+.product-title h4{
+    color: #004D00;
+    margin-bottom: 1%;
+}
+.product-item{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 60px;
+   
+}
+.product-title-head{
+    margin-top: 50px;
+}
+.products{
+    margin-top: 20px;
+    width:22.3%;
+    border:3px solid #ccc; 
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.products-container{
+    margin-bottom:4%;
+}
+
+#product-list {
+    background-color: black;
+    z-index: 1000;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+    color: red;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#loading-message {
+    font-size: larger;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid red;
+    padding: 10px;
+    animation: blinkCaret 0.75s step-end infinite;
+}
+
+@keyframes blinkCaret {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.alert-success{
+    background-color:white;
+    width: 30%;
+    max-width: 400px;
+    border-radius: 10px;
+    color: lime;
+    position: fixed; /* Fix position */
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the div */
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    height: 100px;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional for better UI */
+padding:2% 3%;
+display: none;
+border:3px solid green;
+}
+.alert-success .p{
+    font-size: smaller;
+}
+.alert-success .p1{
+    border:2px solid maroon;
+    background-color: RED;
+    color:white;
+    border-radius:20px ;
+    width:80px;
+    padding:2%;
+    text-align: center;
+    margin-top: 3%;
+    margin-left:65%;
+    font-size: medium;
+cursor: pointer;
+transition:0.3s ;
+}
+.alert-success .p1:hover{
+    background-color:rgba(255, 0, 0, 0.616) ;
+}
+/* alert error msg*/
+.alert-error {
+    background-color:white;
+    width: 30%;
+    max-width: 400px;
+    border-radius: 10px;
+    color:red;
+    position: fixed; /* Fix position */
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the div */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* height: 100px; */
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+padding:2% 3%;
+display: none;
+min-height: 100px; 
+max-height: 80vh; 
+overflow: auto; 
+border:2px solid red;
+}
+.alert-error .p{
+    font-size: smaller;
+}
+.alert-error .p1{
+    /* border:2px solid green;
+    background-color:lime; */
+    border:2px solid cyan;
+    background-color:darkblue; 
+    color:white;
+    border-radius:20px ;
+    width:80px;
+    padding:2%;
+    text-align: center;
+    margin-top: 3%;
+    margin-left:65%;
+    font-size: medium;
+cursor: pointer;
+transition:0.3s ;
+}
+.alert-error .p1:hover{
+    /* background-color:rgba(0, 255, 0, 0.63); */
+    background-color: rgba(0, 0, 139, 0.836);
+}
+/*media query*/
+@media screen and (max-width: 600px) {
+    .navbar-menu-toggle {
+        display: block;
+ margin-left: 20px;
+ font-size: larger;
+    }
+
+    .navbar-items{
+        display: none;
+    }
+    .navbar{
+    gap:30px;}
+    .cart-header{
+   margin-left: 0px;
+}
+.cart-header{
+   margin-left: 0px;
+}
+.product-item{
+   flex-direction: column; 
+   gap: 10px;
+   flex-wrap: wrap;
+  
+}
+.products{
+    flex-basis: 20px;
+    flex-grow: 1;
+    margin-left: 20%;
+    width: 62.4%;
+  
+}
+.alert-success{
+    max-width: 800px;
+    width: 60%;
+}
+.alert-error{
+    width:60%;
+    max-width: 800px;
+}
+}
+</style>
+<!--google icons-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!--font awesome icons-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
+</head>
+<body>
+     <!--HOME PAGE-->
+<div class="home-page">
+    <!--title-->
+    <nav class="navbar">
+        <div class="navbar-links-img">
+            <h1>Bloomtrack Plant</h1>
+            <img src="image/logo.png" width="70" height="60">
+        </div>   
+       <!--product items-->
+       <div class="navbar-items">
+            <div>
+                <p><a href="home1.html">Home</a></p> 
+            </div>
+            <div class="orders">
+                <p onclick="openProfile()">My Profile</p>
+            </div>
+            <div>
+                <select class="select" id="product-category" onchange="filterProducts()">
+                    <option value="all">All Products</option>
+                    <option value="Herbal-plant">Herbal Plant</option>
+                    <option value="Herbal-flower">Herbal Flower</option>
+                    <option value="Herbal-seed">Herbal Seed</option>
+                </select>
+            </div>
+        <!--my order item-->
+            </div> 
+                <div class="cart-header" onclick="showCart()">
+                    <!-- <i class="fa-solid fa-cart-shopping"></i> -->
+                     <a href="cartsection.html?from=products"><i class="fa-solid fa-cart-shopping"></i></a>
+                     <span id="cart-count">0</span>
+                </div>
+            <div>
+            <div class="navbar-menu-toggle" onclick="showNavbar()">
+            <!----font awesome bars icons use---->
+                <i class="fa-solid fa-bars"></i>
+             </div>
+        </div> 
+    </nav>
+    <!--side navbar-->
+    <div class="side-navbar">
+        <p class="bar" onclick="closeNavbar()"><i class="fa-solid fa-xmark"></i></p>
+        <div class="side-navbar-links">
+            <div>
+              <p ><a href="home1.html">Home</a></p> 
+            </div>
+            <div>
+              
+                <select class="select" id="product-category" onchange="filterProducts()">
+                      <option value="all">All Products</option>
+                      <option value="Herbal-plant">Herbal Plant</option>
+                      <option value="Herbal-flower">Herbal Flower</option>
+                      <option value="Herbal-seed">Herbal Seed</option>
+                </select>
+              
+            </div>  
+            <div class="order">
+               <p onclick="openProfile()">My Profile</p>
+            </div>
+        </div>
+    </div>
+    <!--discount-->
+    <div class="discount">
+        <marquee behavior="scroll" direction="LEFT">
+           DISCOUNT 10%  FOR SUMMER SALES...PURCHASE IMMEDIATELY TO CREATE A OWN GARDEN IN YOUR PLACE
+        </marquee>
+    </div>
+    <!--product search-->
+    <div class="product-search-section">
+        <form class="product-search">
+        
+         <input type="text" id="search-product" placeholder="Search products..." onkeyup="searchProducts()">
+
+         <i class="fa-solid fa-magnifying-glass"></i></form>
+    </div>
+    <!--herbal palnt product items-->
+    <div id="products-container">
+        <div class="product-title-head">
+            <div class="product-title">
+                <h4>HERBAL PLANTS</h4>
+                <p style="padding-left: 2%;">Herbal plants, or herbs, are used to treat a variety of conditions, including pain,inflammation, and other health concerns.</p>
+            </div>
+            <div class="product-item"  class="product-container"  id="herbal-plants">
+                
+                
+
+            </div>
+        </div>
+        <!---herbal flower-->
+        <div class="product-title-head">
+            <div class="product-title">
+                <h4>HERBAL FLOWER</h4>
+                <p style="padding-left: 2%;">
+                The theory of dietary herbal medicine is a key part of traditional Chinese medicine.
+                Herbal flowers are used to prevent and treat a variety of diseases.
+                is needed to improve the safety and effectiveness of dietary herbal medicines
+                </p>
+            </div> 
+            <div class="product-item" id="herbal-flowers" class="product-container">
+                
+
+            </div>
+
+        </div>
+        <!--3herbal seed-->
+        <div class="product-title-head">
+            <div class="product-title">
+               <h4>HERBAL SEED</h4>
+               <p style="padding-left: 2%;">
+                The seed is the embryonic stage of the plant life cycle. Most seeds consist of three parts: embryo, endosperm, and seed coat. The embryo is a tiny plant that has a root, a stem, and one or more leaves. The endosperm is the nutritive tissue of the seed, often a combination of starch, oil, and protein.
+               </p>
+            </div> 
+            <div class="product-item" class="product-container" id="herbal-seeds">
+                
+
+            </div>
+    </div>
+    <div id="product-list">
+        <p id="loading-message" class="loading-message">PRODUCT  IS  LOADING...  PLEASE  WAIT...</p>
+    </div>
+    <div class="alert-success">
+        <p CLASS="P"></p>
+       
+            <P CLASS="p1" onclick="successmsg()">OK</P>
+    </div>
+    <div class="alert-error" >
+        <p class="alert-text" CLASS="p"></p>
+            <P onclick="seterrormsg()" CLASS="p1">OK</P>
+    </div>
+
+
+
+</div>
+
+
+<script>
+// Select the side navbar
+var sideNavbar = document.querySelector('.side-navbar');
+    // Function to show the navbar
+    function showNavbar() {
+        sideNavbar.style.left = '0%';
+    }
+    // Function to close the navbar
+    function closeNavbar() {
+        sideNavbar.style.left = '-60%';
+    }
+    var search = document.getElementById("search-product");
+var titleHeads = document.querySelectorAll(".product-title-head");
+
+search.addEventListener("keyup", function () {
+    var filterValue = search.value.toUpperCase();
+    
+    titleHeads.forEach(function (titleHead) {
+        var title = titleHead.querySelector("h4").textContent.toUpperCase();
+        var productItems = titleHead.querySelectorAll(".products"); 
+        var hasVisibleProduct = false; 
+
+        productItems.forEach(function (product) {
+            var productName = product.querySelector("h3").textContent.toUpperCase();
+
+            if (productName.indexOf(filterValue) > -1 || title.indexOf(filterValue) > -1) {
+                product.style.display = "block";
+                hasVisibleProduct = true; 
+            } else {
+                product.style.display = "none"; 
+            }
+        });
+         if (hasVisibleProduct) {
+            titleHead.style.display = "block"; 
+        } else {
+            titleHead.style.display = "none"; 
+        }
+    });
+});
+//select option
+function filterProducts() {
+    let selectedCategory = document.getElementById("product-category").value;
+    let productSections = document.querySelectorAll(".product-title-head");
+
+    productSections.forEach(section => {
+        let categoryTitle = section.querySelector("h4").innerText.toLowerCase().trim();
+
+        let formattedCategory = selectedCategory.replace("-", " ").toLowerCase();
+        
+        if (formattedCategory === "herbal plant") {
+            formattedCategory = "herbal plants";
+        } else if (formattedCategory === "herbal flower") {
+            formattedCategory = "herbal flower";
+        } else if (formattedCategory === "herbal seed") {
+            formattedCategory = "herbal seed";
+        }
+
+        if (selectedCategory === "all" || categoryTitle.includes(formattedCategory)) {
+            section.style.display = "block"; 
+        } else {
+            section.style.display = "none"; 
+        }
+    });
+}
+// LOADING MESSAGE
+
+document.addEventListener("DOMContentLoaded", function () {
+     let loadingElement = document.getElementById("loading-message");
+    let loadingContainer = document.getElementById("product-list");
+    setTimeout(() =>{
+loadingContainer.style.display = "none";
+    },1000)
+ });  
+//products show
+
+document.addEventListener("DOMContentLoaded", loadProducts);
+async function loadProducts() {
+    try {
+        const response = await fetch("https://bloomtrack-herbal-plant-e-commerce.onrender.com/products");
+        // const response = await fetch("http://localhost:3600/products");
+        const products = await response.json();
+        products.forEach(product =>
+         {
+            let productContainer = document.getElementById(product.category);
+
+            if (!productContainer) 
+            {
+                console.warn(`Category ID '${product.category}' not found. Appending to #product-list.`);
+                productContainer = productList; // Default to product-list if category is missing
+            }
+
+            // Create a new div for each product
+            const productElement = document.createElement("div");
+            productElement.classList.add("products");
+
+            productElement.innerHTML = `
+                <img src="${product.productImage}" alt="${product.productName}" width="300" height="250">
+                <h3>${product.productName}</h3>
+                <h4>
+                    <span style="color:black;">Rs ${product.productPrice}</span>
+                    <del><small style="color:grey;">Rs ${product.discountPrice}</small></del>
+                </h4>
+                ${product.size ? `<p><b>Size:</b> <span>${product.size}</span></p>` : ""}
+                <button class="add-to-cart-btn" data-id="${product._id}"  onclick="addToCart(this,'${product._id}',1,'${product.productPrice}','${product.productName}')">ADD TO CART</button>
+
+
+            `;
+            // <button class="buy-products" onclick="buyNow('${product._id}')">BUY NOW</button>
+            // Apply styles dynamically
+            productElement.querySelector("h3").style.marginTop = "2%";
+            productElement.querySelector("h4").style.paddingTop = "2%";
+            productElement.querySelector("h4").style.paddingBottom = "5%";
+
+            // Append the product
+            productContainer.appendChild(productElement);
+        });
+
+    } catch (error) {
+        console.error("Error fetching products:", error);
+        // document.getElementById("product-list").innerHTML = `<p style="color:red;">Failed to load products. Please try again later.</p>`;
+    }
+}
+
+// Function to add products to cart
+        const token = localStorage.getItem("token");
+async function addToCart(button,id,qty,price,name) 
+{
+    try {
+        // Fetch products from backend
+    const token1 = localStorage.getItem("token");
+    console.log("token"+token1)
+    const response = await fetch("https://bloomtrack-herbal-plant-e-commerce.onrender.com/user/cart",
+    // const response = await fetch("http://localhost:3600/user/cart",
+        {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": 'Bearer '+token1
+            },
+            body: JSON.stringify({
+                cartItem: id, 
+                qty:qty
+            })
+        });
+
+
+        if(response.ok){
+             //change the item
+            button.textContent="ADDED"
+            button.style.backgroundColor ="red";
+            button.disabled = true;
+
+ document.querySelector(".P").innerHTML=`<span>"${name}" added to cart for <span style="color:red; padding-left:2px">Rs ${price}</span></span>`;
+          document.querySelector(".alert-success").style.display="block";
+                await new Promise((resolve) => setTimeout(resolve, 2000));
+                successmsg();
+            
+           let cartCount = document.getElementById("cart-count");
+            cartCount.textContent = parseInt(cartCount.textContent) + 1;
+            let cartData = JSON.parse(localStorage.getItem("cartData")) || {};
+            cartData[token1] = cartData[token1] || {};  // Initialize if not set
+            cartData[token1][id] = { text: "ADDED", color: "red", disabled: true };
+            localStorage.setItem("cartData", JSON.stringify(cartData));
+
+            
+        } else {
+            const errordata = await response.json();
+            console.log(JSON.stringify(errordata));
+            console.error(errordata.message);
+            document.querySelector(".alert-error").style.display="block";
+            document.querySelector(".alert-text").textContent=errordata.message;
+                await new Promise((resolve) => setTimeout(resolve, 3000));
+               errormsg();
+            // alert(errordata.message)
+        }
+            }
+            catch (error) {
+
+            console.log("Error fetching products:", error);
+        }
+        }
+
+
+
+function successmsg() {
+    const successAlert = document.querySelector(".alert-success");
+    if (successAlert) 
+    {
+        successAlert.style.display = "flex"; // Show success message
+        setTimeout(() => {
+            successAlert.style.display = "none"; // Hide after 1.5s
+        }, 1000);
+    }
+}
+
+function errormsg() {
+    const errorAlert = document.querySelector(".alert-error");
+    if (errorAlert) 
+    {
+        errorAlert.style.display = "flex"; // Show error message
+        setTimeout(() => {
+            errorAlert.style.display = "none";
+        }, 1000);
+    }
+}
+
+
+
+ function showCart() {
+window.location.href = "cartsection.html"; // Navigate to cart page
+ }
+
+
+//open profile
+function openProfile(){
+    window.location.href = "profileshow.html"; // Redirect to the products page
+}
+    
+
+
+</script>
+</body>
+</html>

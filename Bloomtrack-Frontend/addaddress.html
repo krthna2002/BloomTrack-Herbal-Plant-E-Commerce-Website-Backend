@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADDRESS</title>
+    <style>
+        *{
+    padding: 0px;
+    margin: 0%;
+}
+
+body{
+    font-family: "Roboto", sans-serif;
+   font-size: larger;
+box-sizing: border-box;
+   }
+.address-lay-icon{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 20px;
+    margin-top: 20px;
+    gap:15px;
+    
+}
+.address-lay-icon i{
+    font-size:larger;
+    cursor: pointer;
+    transition: 0.3s;
+    color:black
+    }
+    .address-lay-icon i:hover{
+        background-color: rgba(128, 128, 128, 0.308);
+        color:black;
+        padding:10px;
+        border-radius: 100%;
+        width:25px;
+    text-align: center;
+    }
+    .address-page .line{
+        border-color:grey;
+    border-width: 100%;
+    margin-top: 1%;
+    /* margin-bottom: 2%; */
+    }
+    .address-lay-icon p{
+        color: green;
+    }
+    .address-lay h4{
+        padding-top: 1%;
+        padding-left: 2%;
+        color:black;
+        cursor: pointer;
+    }
+/*-----*/
+.address-form1{
+        width:100%;
+        height:100%;
+        background-color:black;
+        position: fixed;
+        opacity: 0.8;
+        z-index:1;
+        top:0px;
+        display: none;
+    }
+    #address-form {
+    width: 50%;
+    height: auto; /* Let it adjust based on content */
+    max-height: 750px; /* Prevent excessive height */
+    background-color: white;
+    box-shadow: rgb(0, 0, 0) 0px 10px 20px, rgb(0, 0, 0) 0px 6px 6px;
+    z-index: 2;
+    position: relative;
+    top: 7%;
+    left: 25%;
+    border-radius: 5px;
+    display: none;
+    transition: max-height 0.3s ease-in-out;
+    overflow: hidden;
+    padding: 20px; /* Adds inner space */
+}
+
+#address-form form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+   
+}
+
+.input-group {
+    margin-bottom: 15px; /* Adds spacing between inputs */
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Controls width */
+    margin-left: 2%;
+}
+
+.input-group input,
+.input-group select {
+    border: none;
+    border-bottom: 2px solid gray;
+    background-color: transparent;
+    font-size: large;
+    width: 95%;
+    padding: 8px;
+    
+}
+.input-group select{
+    width:98%;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-bottom-color: green;
+}
+
+#address-form button {
+    padding: 10px;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    width: 20%; /* Buttons take up space */
+    margin: 10px 2.5%; /* Adjusted spacing */
+    text-align: center;
+}
+
+#address-form button:last-child {
+    background-color: red;
+}
+
+
+
+    /*error */
+    .input-group .error{
+        color:red;
+        font-size: 16px;
+        margin-top:1%;
+        /* margin-left: -1%; */
+} 
+.input-group.success input{
+        border-color: greenyellow;
+     }
+     .input-group .error input{
+        border-color:rgb(206, 54, 54);
+        
+     }
+
+    .addresscontainer {
+    margin-top: 10px;
+    margin-left: 25px;
+    font-size: large;
+    
+}
+
+.addresscontainer h3{
+    padding-top: 10px;
+    color:#004D00;
+}
+.addresscontainer h6 {
+    /* margin: 5px 0; Adds spacing between text */
+    padding-top: 8px;
+    color:rgba(0, 0, 0, 0.705);
+    font-size: large;
+    padding-left: 20px;
+}
+
+    
+.addresscontainer button {
+    background-color: green;
+    color: white;
+    padding: 10px 10px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    
+}
+
+.addresscontainer hr {
+   margin-left: -3%;
+   border-color:grey;
+   border-width: 100%;
+   margin-top: 1%;
+}
+
+
+.address-box h3, .address-box h6 {
+    margin: 5px 0;
+}
+
+.address-box .edit-btn {
+    color: green;
+    cursor: pointer;
+    /* text-decoration: underline; */
+    font-size: large;
+ 
+   padding-top: 8px;
+}
+    
+
+
+.address-box .remove-btn {
+    background-color: red;
+    color: white;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 3%;
+}
+
+.address-box button {
+    background-color: green;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+ /*alert succes msg */
+ .alert-success {
+    background-color:white;
+    width: 30%;
+    max-width: 400px;
+    border-radius: 10px;
+    color: lime;
+    position: fixed; 
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    height: 100px;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+padding:2% 3%;
+display: none;
+border:3px solid green;
+}
+.alert-success .p{
+    font-size: smaller;
+}
+.alert-success .p1{
+    border:2px solid maroon;
+    background-color: RED;
+    color:white;
+    border-radius:20px ;
+    width:80px;
+    padding:2%;
+    text-align: center;
+    margin-top: 3%;
+    margin-left:65%;
+    font-size: medium;
+cursor: pointer;
+transition:0.3s ;
+}
+.alert-success .p1:hover{
+    background-color:rgba(255, 0, 0, 0.616) ;
+}
+/* alert error msg*/
+.alert-error {
+    background-color:white;
+    width: 30%;
+    max-width: 400px;
+    border-radius: 10px;
+    color:red;
+    position: fixed; /* Fix position */
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* height: 100px; */
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+padding:2% 3%;
+display: none;
+min-height: 100px; 
+max-height: 80vh; 
+overflow: auto; 
+border:2px solid red;
+}
+.alert-error .p{
+    font-size: smaller;
+}
+.alert-error .p1{
+    /* border:2px solid green;
+    background-color:lime; */
+    border:2px solid cyan;
+    background-color:darkblue; 
+    color:white;
+    border-radius:20px ;
+    width:80px;
+    padding:2%;
+    text-align: center;
+    margin-top: 3%;
+    margin-left:65%;
+    font-size: medium;
+cursor: pointer;
+transition:0.3s ;
+}
+.alert-error .p1:hover{
+    /* background-color:rgba(0, 255, 0, 0.63); */
+    background-color: rgba(0, 0, 139, 0.836);
+}
+/*alert error passed msg*/
+.alert-error-msg {
+    background-color:white;
+    width: 30%;
+    max-width: 400px;
+    border-radius: 10px;
+    color: darkblue;
+    position: fixed;
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* height: 100px; */
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+padding:2% 3%;
+display: none;
+min-height: 100px; 
+max-height: 80vh; 
+overflow: auto; 
+border:2px solid #2567AE;
+}
+.alert-error-msg .p{
+    font-size: smaller;}
+.alert-error-msg .p1{
+    border:2px solid green;
+    background-color:lime;
+    color:black;
+    border-radius:20px ;
+    width:80px;
+    padding:2%;
+    text-align: center;
+    margin-top: 3%;
+    margin-left:65%;
+    font-size: medium;
+cursor: pointer;
+transition:0.3s ;
+}
+.alert-error-msg .p1:hover{
+    background-color:rgba(0, 255, 0, 0.63);
+}
+.alert-error-add{
+    background-color:white;
+    width: 30%;
+    max-width: 400px;
+    border-radius: 10px;
+    color:red;
+    position: fixed; /* Fix position */
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the div */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* height: 100px; */
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+padding:2% 3%;
+display: none;
+min-height: 100px; 
+max-height: 80vh; 
+overflow: auto; 
+border:2px solid red;
+}
+.alert-error-add .p{
+    font-size: smaller;
+}
+.alert-error-add .p1{
+    /* border:2px solid green;
+    background-color:lime; */
+    border:2px solid cyan;
+    background-color:darkblue; 
+    color:white;
+    border-radius:20px ;
+    width:80px;
+    padding:2%;
+    text-align: center;
+    margin-top: 3%;
+    margin-left:65%;
+    font-size: medium;
+cursor: pointer;
+transition:0.3s ;
+}
+.alert-error-add .p1:hover{
+    /* background-color:rgba(0, 255, 0, 0.63); */
+    background-color: rgba(0, 0, 139, 0.836);
+}
+.alert-error-del{
+    background-color:white;
+    width: 30%;
+    max-width: 400px;
+    border-radius: 10px;
+    color:red;
+    position: fixed; 
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* height: 100px; */
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+padding:2% 3%;
+display: none;
+min-height: 100px; 
+max-height: 80vh;
+overflow: auto; 
+border:2px solid red;
+}
+.alert-error-add .p{
+    font-size: smaller;
+}
+.alert-error-add .p1{
+    /* border:2px solid green;
+    background-color:lime; */
+    border:2px solid cyan;
+    background-color:darkblue; 
+    color:white;
+    border-radius:20px ;
+    width:80px;
+    padding:2%;
+    text-align: center;
+    margin-top: 3%;
+    margin-left:65%;
+    font-size: medium;
+cursor: pointer;
+transition:0.3s ;
+}
+.alert-error-add .p1:hover{
+    /* background-color:rgba(0, 255, 0, 0.63); */
+    background-color: rgba(0, 0, 139, 0.836);
+}
+/*ALERT PROFILE*/
+.alert-profile {
+    background-color:white;
+    width: 30%;
+    max-width: 400px;
+    border-radius: 10px;
+    color:#FF007F;
+    position: fixed; 
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* height: 100px; */
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+padding:2% 3%;
+display: none;
+min-height: 100px;
+max-height: 80vh; 
+overflow: auto; 
+border:2px solid #FE2C54;
+}
+.alert-profile .p{
+    font-size: smaller;
+}
+.alert-profile .p1{
+    /* border:2px solid green;
+    background-color:lime; */
+    border:2px solid cyan;
+    background-color:darkblue; 
+    color:white;
+    border-radius:20px ;
+    width:80px;
+    padding:2%;
+    text-align: center;
+    margin-top: 3%;
+    margin-left:65%;
+    font-size: medium;
+cursor: pointer;
+transition:0.3s ;
+}
+.alert-profile .p1:hover{
+    /* background-color:rgba(0, 255, 0, 0.63); */
+    background-color: rgba(0, 0, 139, 0.836);
+}
+/*address remove*/
+
+.alert-add-remove{
+    background-color:white;
+    width: 30%;
+    max-width: 400px;
+    border-radius: 10px;
+    color: lime;
+    position: fixed; /* Fix position */
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the div */
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    height: 100px;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional for better UI */
+padding:2% 3%;
+display: none;
+border:3px solid green;
+}
+.alert-add-remove .p{
+    font-size: smaller;
+}
+.alert-add-remove .p1{
+    border:2px solid maroon;
+    background-color: RED;
+    color:white;
+    border-radius:20px ;
+    width:80px;
+    padding:2%;
+    text-align: center;
+    margin-top: 3%;
+    margin-left:65%;
+    font-size: medium;
+cursor: pointer;
+transition:0.3s ;
+}
+.alert-add-remove .p1:hover{
+    background-color:rgba(255, 0, 0, 0.616) ;
+}
+
+@media  screen and (max-width:600px) {
+    #address-form { 
+        width: 80%;
+        height: auto; /* Adjust height dynamically */
+        margin-top: 6%;
+        left: 40px;
+    }
+
+    #address-form form {
+        padding-top: 3%;
+    }
+
+    .input-group {
+        width: 100%; /* Make inputs and select take full width */
+    }
+
+    .input-group input,
+    .input-group select {
+        width: 95%;
+        padding-top: 5%;
+    }
+.input-group select {
+    width:99%;
+}
+    #address-form button {
+        width: 35%; /* Increase width for better touch area */
+        padding: 3%;
+        margin-right: 4%;
+    }
+
+
+    .address-lay-icon{
+        padding:2%;
+    }
+    .address-lay h4{
+        padding:2%;
+    }
+
+    .alert-success{
+    max-width: 800px;
+    width: 60%;
+}
+.alert-error{
+    width:60%;
+    max-width: 800px;
+}
+.alert-error-msg{
+    width:60%;
+    max-width: 800px;
+}
+.alert-error-del{
+    width:60%;
+    max-width: 800px;
+}
+.alert-profile{
+    width:60%;
+    max-width: 800px;
+}
+.alert-error-add{
+    max-width: 800px;
+    width: 60%;
+}
+.alert-add-profile{
+    width:60%;
+    max-width: 800px;
+}
+.alert-add-remove{
+    width:60%;
+    max-width: 800px;
+}
+
+}
+</style>
+<!--google icons-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!--font awesome icons-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
+</head>
+<body>
+    <!----adress section-->
+    <div class="address-page">
+        <div class="address-lay">
+            <div class="address-lay-icon">
+                <i class="fa fa-angle-left" aria-hidden="true" onclick="closeaddress()"></i>
+                <p>ADD DELIVERY ADDRESS</p>
+            </div>
+            <hr class="line">
+            <h4 onclick="openAddressForm()">+ ADD ADDRESS</h4>
+            <hr class="line">
+            <div class="address-form1"></div>
+            <div id="address-form">
+                <form id="add-form">
+                    <div class="input-group">
+                        <input type="text"  id="f-name" placeholder="Full Name*">
+                        <p class="error"></p>
+                    </div>
+                    <div class="input-group">
+                         <input type="text"  id="l-name"  placeholder="Last Name*">
+                         <p class="error"></p>
+                    </div>
+                    <div class="input-group">
+                        <input type="text"   id="h-no" placeholder="house no/street name*">
+                        <p class="error"></p>
+                    </div>
+                    <div class="input-group">
+                        <input type="text"  id="area"   placeholder="Area Name/Area/Colony*"> 
+                        <p class="error"></p>
+                    </div>
+                    <div class="input-group">
+                        <input type="text"  id="city"   placeholder="City*">
+                        <p class="error"></p>
+                    </div>
+                    <div class="input-group">
+                         <input type="number"  id="pincode" placeholder="zipcode*">
+                         <p class="error"></p>
+                    </div>
+                    <div class="input-group">
+                         <input type="number"  id="number" placeholder="Contact Number*"></inpu>
+                         <p class="error"></p>
+                    </div>
+                    <div class="input-group">
+                        <select id="state" >
+                            <option value="">Select State</option>
+                            <option value="Assam">Assam</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="TamilNadu">TamilNadu</option>
+                        </select>
+                        <p class="error"></p>
+                    </div>
+                </form>
+                    <button id="address-add" onclick="addAddress(event)">ADD</button>
+                    <button onclick="closeAddressForm()">CANCEL</button>
+                
+                
+            </div>
+            <div class="container">
+                <div class="addresscontainer">
+
+                </div>
+            </div>
+        </div>
+        <div class="alert-success">
+            <p class="P">ADDRESS ADDED SUCCESSFULLY</hp>
+            <P class="p1" onclick="successmsg()">OK</P>
+        </div>
+       <div class="alert-error" >
+       <P class="P">SOMETHING WENT WRONG. PLEASE CHECK YOUR SERVER.</P>
+        <P class="p1" onclick="errormsg()">OK</P>
+       </div>
+       <div class="alert-error-msg" >
+            <p class="p" class="alert-text"></p>
+            <P class="p1" onclick="seterrormsg()">OK</P>
+       </div>
+       <!--add addres alert-->
+       <div class="alert-error-add" >
+        <P class="P">FAILED TO LOAD ADDRESSSES.</P>
+             <P class="p1" onclick="errormsgadd()">OK</P>
+        </div>
+        <div class="alert-error-del" >
+            <P class="P">FAILED TO DELETE ADDRESS</P>
+                 <P class="p1" onclick="errormsgdel()">OK</P>
+        </div>
+        <div class="alert-profile">
+            <p class="p">GO TO CREATE YOUR PROFILE</p>
+            <P onclick="profilemsg()" CLASS="p1">OK</P>
+        </div>
+        <div class="alert-add-remove">
+            <p class="p">ADDRESS REMOVE SUCCESSFULLY.</p>
+            <P onclick="addremove()" CLASS="p1">OK</P>
+        </div>
+    </div>
+    <script>
+// close address page
+function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    console.log("Full URLSearchParams:", urlParams.toString()); 
+    console.log("Query Param Requested:", param);
+    return urlParams.get(param);
+}
+function closeaddress() {
+    const fromPage = getQueryParam('from');
+    console.log("fromPage:", fromPage); 
+
+    if (fromPage === 'profileshow') {
+        window.location.href = 'profileshow.html';
+    } else if (fromPage === 'cartsection') {
+        window.location.href = 'cartsection.html';
+    }
+    else 
+    {
+        window.location.href = 'cartsection.html'; 
+    }
+}
+// function closeaddress(){
+//     window.location.href = 'cartsection.html';
+// }
+function openAddressForm() {
+    document.querySelector(".address-form1").style.display = "block";
+    document.getElementById("address-form").style.display = "block";
+}
+// Close the Address Form
+function closeAddressForm() {
+    setTimeout(() => {
+        document.querySelector(".address-form1").style.display = "none";
+        document.getElementById("address-form").style.display = "none";
+        }, 3000);
+}
+// Function to Add Address
+function validateAddressForm() {
+    let success = true;
+    let fullName = document.getElementById("f-name");
+    let lastName = document.getElementById("l-name");
+    let houseNo = document.getElementById("h-no");
+    let area = document.getElementById("area");
+    let city = document.getElementById("city");
+    let state = document.getElementById("state");
+    let pincode = document.getElementById("pincode");
+    let phone = document.getElementById("number");
+    // Clear previous errors
+    [fullName,lastName,houseNo, area, city, state, pincode, phone].forEach(clearError);
+    if (!fullName.value.trim()) {
+        setError(fullName, "First Name is required.");
+        success = false;
+    }
+    if (!lastName.value.trim()) {
+        setError(lastName, "Last Name is required.");
+        success = false;
+    }
+    if (!houseNo.value.trim()) {
+        setError(houseNo, "House No/Street Name is required.");
+        success = false;
+    }
+    if (!area.value.trim()) {
+        setError(area, "Area Name is required.");
+        success = false;
+    }
+    if (!city.value.trim()) {
+        setError(city, "City is required.");
+        success = false;
+    }
+    if (!state.value.trim()) {
+        setError(state, "Please select a state.");
+        success = false;
+    }
+    if (!pincode.value.trim()) {
+        setError(pincode, "Zipcode is required.");
+        success = false;
+    }
+    if (!phone.value.trim()) {
+        setError(phone, "Contact Number is required.");
+        success = false;
+    }
+
+    return success; // Return true if validation passes
+}
+let success = true;
+
+    function setError(input, message) {
+        let inputGroup = input.closest(".input-group");
+        let errorElement = inputGroup.querySelector(".error");
+        errorElement.innerText = message;
+        success = false;
+    }
+
+    function clearError(input) {
+        let inputGroup = input.closest(".input-group");
+        let errorElement = inputGroup.querySelector(".error");
+      errorElement.innerText = "";
+    }
+
+async function addAddress(event) {
+    event.preventDefault(); // Prevent form reload
+
+    const token = localStorage.getItem("token");
+// Run validation before proceeding
+if (!validateAddressForm()) {
+        return; // Stop execution if validation fails
+    }
+    if (!token) {
+        alert("User not authenticated! Please log in.");
+        window.location.href = "login.html";
+        return;
+    }
+
+   
+    const addressData = {
+        fName: document.getElementById("f-name").value.trim(),
+        lName: document.getElementById("l-name").value.trim(),
+        houseNo: document.getElementById("h-no").value.trim(),
+        area: document.getElementById("area").value.trim(),
+        city: document.getElementById("city").value.trim(),
+        state: document.getElementById("state").value.trim(),
+        zipcode: document.getElementById("pincode").value.trim(),
+        phone: document.getElementById("number").value.trim()
+    };
+console.log("my details"+addressData.fName);
+console.log("my details"+addressData.lName);
+console.log("my details"+addressData.houseNo);
+console.log("my details"+addressData.area);
+console.log("my details"+addressData.city);
+console.log("my details"+addressData.state);
+console.log("my details"+addressData.zipcode);
+console.log("my details"+addressData.phone);
+    
+    try {
+        const response = await fetch("https://bloomtrack-herbal-plant-e-commerce.onrender.com/user/address",
+        // const response = await fetch("http://localhost:3600/user/address",
+         {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + token
+            },
+            // body: JSON.stringify({ addressList: addressData })
+             body:JSON.stringify({
+                fName: addressData.fName,
+                lName: addressData.lName,
+                houseNo: addressData.houseNo,
+                area:addressData.area, // Interpolate address and area correctly
+                city: addressData.city,
+                state: addressData.state,
+                zipcode: addressData.zipcode,
+                phone: addressData.phone
+              
+
+             })
+            // Ensure correct format
+        })
+        const result = await response.json();
+        console.log("Response krt:", result);
+
+        if (response.ok) {
+            
+            document.querySelector(".alert-success").style.display="block";
+            // await new Promise((resolve) => setTimeout(resolve, 1000));
+           
+            successmsg();
+            
+            // alert("Address added successfully!");
+            closeAddressForm(); // Hide form
+            await fetchAndDisplayAddresses(); 
+          
+        } else {
+            // document.querySelector(".alert-text").textContent=result.message  || "Failed to add address.";
+            document.querySelector(".alert-text").textContent = result.message || "Failed to add address.";
+
+            document.querySelector(".alert-error-msg").style.display = "block"; // Show error box
+            seterrormsg();
+            // alert(result.message || "Failed to add address.");
+        }
+    } catch (error) {
+        console.log("Error adding address:", error);
+         /***/
+         document.querySelector(".alert-error").style.display="block";
+         await new Promise((resolve) => setTimeout(resolve, 2000));
+         errormsg();
+         /***/
+        // alert("Something went wrong. Please try again.");
+    }
+    document.getElementById("add-form").reset();
+}
+function successmsg() {
+    const successAlert = document.querySelector(".alert-success");
+    if (successAlert) {
+        successAlert.style.display = "flex"; // Show success message
+        setTimeout(() => {
+            successAlert.style.display = "none"; // Hide after 1.5s
+        }, 3000);
+    }
+}
+
+function errormsg() {
+    const errorAlert = document.querySelector(".alert-error");
+    if (errorAlert) {
+        errorAlert.style.display = "flex"; // Show error message
+        setTimeout(() => {
+            errorAlert.style.display = "none";
+        }, 3000);
+    }
+}
+
+function seterrormsg() {
+    const errorMsgAlert = document.querySelector(".alert-error-msg");
+    if (errorMsgAlert) {
+        errorMsgAlert.style.display = "flex"; // Show custom error message
+        setTimeout(() => {
+            errorMsgAlert.style.display = "none";
+        }, 3000);
+    }
+}
+
+
+// <button onclick="deleteAddress(${index})">Delete</button>
+                    // <button onclick="deleteAddress(${index})">Deliver </button>
+// Fetch and Display Saved Addresses
+async function fetchAndDisplayAddresses() {
+    const token = localStorage.getItem("token");
+    if (!token) {
+        console.error("Error: No token found! User is not authenticated.");
+        alert("User is not authenticated!");
+        return;
+    }
+
+    console.log("Token before fetch:", token);
+    try {
+        const response = await fetch("http://localhost:3600/user/profile", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + token
+            }
+        });
+
+        if (response.ok) {
+            
+const userProfile = await response.json();
+            const addressList = userProfile.addressList || [];
+            
+            const addressContainer = document.querySelector(".addresscontainer");
+            addressContainer.innerHTML = ""; // Clear previous addresses
+            
+            addressList.forEach((addressData, index) => {
+                const addressDiv = document.createElement("div");
+                addressDiv.classList.add("address-box");
+                addressDiv.setAttribute("data-address-id", addressData._id); // Ensure ID is set
+                addressDiv.innerHTML = `
+                    <h3><strong>${addressData.fName} ${addressData.lName}</strong></h3>
+                    <h6>${addressData.houseNo} , ${addressData.area}</h6>
+                    <h6> ${addressData.city}</h6>
+                    <h6> ${addressData.state} - ${addressData.zipcode}</h6>
+                    <h6>Phone: ${addressData.phone}</h6>
+                   
+                    <button class="remove-btn" onclick="deleteAddress(${index})">Remove</button>
+            <button onclick='finalfun(event, ${JSON.stringify(addressData)})' class="deliver-but">Deliver to this Address</button>
+
+            <hr>
+
+                `;
+                 // <p class="edit-btn">EDIT</p>
+                addressContainer.appendChild(addressDiv);
+            });
+        } else {
+            document.querySelector(".alert-error-add").style.display="block";
+            
+            await new Promise((resolve) => setTimeout(resolve, 3000));
+            // alert("Failed to load addresses.");
+            errormsgadd()
+        }
+    } catch (error) {
+        console.error("Error fetching addresses:", error);
+    }
+}
+function errormsgadd()
+{
+    const errorAlertAdd = document.querySelector(".alert-error-add");
+    if (errorAlertAdd) {
+        errorAlertAdd.style.display = "flex"; // Show error message
+        setTimeout(() => {
+            errorAlertAdd.style.display = "none";
+        }, 3000);
+    }
+    function profilemsg(){
+    alertProfile =document.querySelector(".alert-profile");
+    if(alertProfile){
+        alertProfile.style.display="flex";
+        setTimeout(() => {
+            alertProfile.style.display="none";
+        }, 3000);
+    }
+
+}
+}
+// Fetch addresses when the page loads
+document.addEventListener("DOMContentLoaded", fetchAndDisplayAddresses);
+/*REMOVE ADDRESS*/
+
+async function deleteAddress(index){
+    const token = localStorage.getItem("token");
+    console.log("remove token"+ token);
+    const addressContainer = document.querySelector(".addresscontainer");
+    const addressList = addressContainer.querySelectorAll(".address-box");
+
+    if (index >= addressList.length) {
+        console.error("Invalid index");
+        return;
+    }
+// Extract address ID from dataset
+const aid = addressList[index].getAttribute("data-address-id");
+    if (!aid) 
+    {
+        console.error("Error: Address ID is undefined.");
+        return;
+    }
+
+    console.log("Deleting address with ID:", aid);
+
+    // // Extract address ID from the dataset
+    // const aid = addressList[index].dataset.addressId;
+    // console.log("Deleting address with ID:", aid);
+    try{
+response=await fetch(`http://localhost:3600/user/address/${aid}`,{
+method: "DELETE",
+headers:{
+    "Content-type" : "application/json",
+    "Authorization" : "Bearer " + token
+}
+});
+const responseData =await response.json();
+console.log("remove id"+ responseData);
+if(response.ok){
+   
+    // setTimeout(() => {
+        
+    // }, timeout);
+    // alert("Address removed successfully");
+    addressList[index].remove(); // Remove from UI
+    fetchAndDisplayAddresses(); // Refresh UI
+    document.querySelector(".alert-add-remove").style.display="block";
+    addremove();
+}
+else {
+    document.querySelector(".alert-error-del").style.display="block";
+            errormsgadd();
+            await new Promise((resolve) => setTimeout(resolve, 3000));
+            // alert("Failed to delete address");
+        }
+}
+    catch(error){
+        console.error("Error deleting address:", error.message);
+    }
+
+}
+function addremove(){
+    const addRemoveAlert = document.querySelector(".alert-add-remove");
+    if (addRemoveAlert) {
+        addRemoveAlert.style.display = "flex"; // Show success message
+        setTimeout(() => {
+            addRemoveAlert.style.display = "none"; // Hide after 1.5s
+        }, 2000);
+    }
+}
+/** GO TO THE DELIVER PAGE*/
+// function finalfun(event){
+//     window.location.href = "finalpage.html";
+// }
+/*****/
+function finalfun(event,addressData) {
+    
+    const addressDiv = event.target.closest(".address-box");
+console.log("address details is show in the content out of the text into the content "+addressDiv.innerHTML);
+    if (!addressDiv) {
+        console.error("Error: Address element not found.");
+        return;
+    }
+console.log(addressData._id);
+  // Store in localStorage
+    localStorage.setItem("selectedAddress", JSON.stringify(addressData));
+
+    // Redirect to final page
+    window.location.href = "finalpage.html";
+
+
+      // Extract address details correctly
+    // const fullName = addressDiv.querySelector("h3").textContent.trim();
+    // const houseArea = addressDiv.querySelectorAll("h6")[0].textContent.trim();
+    // const city = addressDiv.querySelectorAll("h6")[1].textContent.trim();
+    // const stateZip = addressDiv.querySelectorAll("h6")[2].textContent.trim();
+    // const phone = addressDiv.querySelectorAll("h6")[3].textContent.trim();
+
+    // const addressDetails = {
+    //     fullName: fullName,
+    //     houseArea: houseArea,
+    //     city: city,
+    //     stateZip: stateZip,
+    //     phone: phone
+    // };
+
+}
+function errormsgdel()
+{
+    const errorAlertDel = document.querySelector(".alert-error-del");
+    if (errorAlertDel) 
+    {
+        errorAlertDel.style.display = "flex"; // Show error message
+        setTimeout(() => 
+        {
+            errorAlertDel.style.display = "none";
+        }, 3000);
+    }
+}
+
+/*******/
+
+// function finalfun(event) {
+//     // let selectedAddress = event.target.parentElement.querySelector("h6").innerText;
+//     localStorage.setItem("selectedAddress", selectedAddress);
+
+//     // let previousPage = localStorage.getItem("previousPage");
+//     // if (previousPage === "cart") {
+//         window.location.href = "finalpage.html";
+//     // } else {
+//     //     window.location.href = "profile.html";
+//     // }
+// }
+
+
+     
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

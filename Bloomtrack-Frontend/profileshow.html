@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    <!--css-->
+    <style>
+        *{
+    padding: 0px;
+    margin: 0%;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+  font-size: larger;
+    background-color: #f5f5f5;
+    
+}
+.profile p{
+    color:green;
+    font-size:larger;
+    padding:10px;
+    
+}
+.line{
+    border-color:grey;
+    border-width: 100%;
+    
+}
+
+.profile-icon{
+color:black;
+padding-bottom: 20px;
+border-radius: 100%;
+margin-bottom: 10%; 
+width:3%;
+height: 3%;
+border: none;
+margin-left: 85%;
+margin-top:-30%;
+font-size: larger;
+text-align: center;
+cursor: pointer;
+}
+.profile-icon:hover{
+color:green;
+}
+.profile{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 20px;
+    margin-top: 2px;
+}
+.profile i{
+    font-size:larger;
+    cursor: pointer;
+    transition: 0.3s;
+    
+    }
+    .profile i:hover{
+        background-color: rgba(128, 128, 128, 0.308);
+        color:black;
+        padding:10px;
+        border-radius: 100%;
+        width:25px;
+    text-align: center;
+    }
+.profile-store{
+    width:30%;
+    height:130px;
+    margin-left:33%;
+    padding:2%;
+    margin-top:5%;
+    border-top-right-radius:10px;
+    border-bottom-left-radius:10px;
+    border-top-left-radius:60px;
+    border-bottom-right-radius:60px;
+    background: linear-gradient(to right, #11998e, #38ef7d);
+    border: 2px solid #008000;  
+
+}
+
+.input-details1,.input-details2,.input-details3{
+    display:flex;
+    flex-direction: row;
+    gap:20px;
+    align-items: center;
+    padding:2%;
+}
+.input-details1 p,.input-details2 p,.input-details3 p{
+ /* color:white; */
+ color: white;
+ font-weight: 600;
+}
+/*set hr line*/
+.hrline{
+    border-color:grey;
+    border-width: 100%;
+height:10px;
+background-color: grey;
+margin-top: 3%; /* Adjust this value as needed */
+
+}
+
+.show-items{
+    width:80%;
+    margin-left: 10%; 
+}
+.show-item{
+    display:flex;
+    flex-direction: row;
+    gap:5%;
+    align-items: center;
+    /* padding: 10px; */
+    margin: 5%;
+    background-color: lightgreen;
+    padding: 2%;
+    border-radius: 10px;
+    
+}
+.show-item i{
+    font-size:xx-large;
+
+}
+.show-item h3{
+    color:green;
+}
+.show-item-details{
+   display: flex;
+    justify-content: space-between; /* Ensures elements are spaced apart */
+    align-items: center; /* Aligns items vertically */
+   width:95%;
+    gap: 10px; /* Adds spacing between child elements */
+   
+}
+.show-item-details p{
+    padding-top:1%;
+  }
+  .show-item-details .icon:hover{
+    background-color: rgba(0, 128, 0, 0.39); /* Background for icon container */
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Set a proper width */
+    height: 40px; /* Set a proper height */
+    padding: 2%;
+    border-radius: 50%; /* Makes it circular */
+  }
+.div1 a
+{
+    text-decoration: none;
+    color:black;
+
+}
+  .hrlines{
+    border-color:grey;
+    border-width: 100%;
+height:10px;
+background-color: grey;
+/* display: none; */
+margin-top: 3%; /* Adjust this value as needed */
+/* margin-top:40%; */
+}
+/*LOGOUT*/
+
+.logout {
+    display: flex; 
+    justify-content: center; /* Centers the button horizontally */
+    margin-top: 3%;
+    /* display: none; */
+    margin-bottom: 5%;
+    /* margin-left: 0%; */
+}
+
+.logout button {
+    background-color: green;
+    color: white;
+    font-size: larger;
+    padding: 15px 20px; /* Adjusted padding for better look */
+    width: 60%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.logout button:hover {
+    background-color: darkgreen; /* Changes color on hover */
+}
+
+/*PROFILE CREATED*/
+.alert-profile-msg {
+    background-color:white;
+    width: 30%;
+    max-width: 400px;
+    border-radius: 10px;
+    color: lime;
+    position: fixed; /* Fix position */
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the div */
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    height: 100px;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional for better UI */
+padding:2% 3%;
+display: none;
+border:3px solid green;
+}
+.alert-profile-msg p{
+    border:2px solid maroon;
+    background-color: RED;
+    color:white;
+    border-radius:20px ;
+    width:80px;
+    padding:2%;
+    text-align: center;
+    margin-top: 3%;
+    margin-left:65%;
+    font-size: medium;
+cursor: pointer;
+transition:0.3s ;
+}
+.alert-profile-msg p:hover{
+    background-color:rgba(255, 0, 0, 0.616) ;
+}
+/* alert error msg*/
+.alert-error {
+    background-color:white;
+    width: 30%;
+    max-width: 400px;
+    border-radius: 10px;
+    color:red;
+    position: fixed; /* Fix position */
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the div */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* height: 100px; */
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional for better UI */
+padding:2% 3%;
+display: none;
+min-height: 100px; /* Ensure it doesn't get too small */
+max-height: 80vh; /* Prevent overflow if content is too large */
+overflow: auto; /* Add scroll if content exceeds max-height */
+border:2px solid red;
+}
+.alert-error p{
+    /* border:2px solid green;
+    background-color:lime; */
+    border:2px solid cyan;
+    background-color:darkblue; 
+    color:white;
+    border-radius:20px ;
+    width:80px;
+    padding:2%;
+    text-align: center;
+    margin-top: 3%;
+    margin-left:65%;
+    font-size: medium;
+cursor: pointer;
+transition:0.3s ;
+}
+.alert-error p:hover{
+    /* background-color:rgba(0, 255, 0, 0.63); */
+    background-color: rgba(0, 0, 139, 0.836);
+}
+/*alert error passed msg*/
+.alert-error-msg {
+    background-color:white;
+    width: 30%;
+    max-width: 400px;
+    border-radius: 10px;
+    color: darkblue;
+    position: fixed; /* Fix position */
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the div */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* height: 100px; */
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional for better UI */
+padding:2% 3%;
+display: none;
+min-height: 100px; /* Ensure it doesn't get too small */
+max-height: 80vh; /* Prevent overflow if content is too large */
+overflow: auto; /* Add scroll if content exceeds max-height */
+border:2px solid #2567AE;
+}
+.alert-error-msg .p{
+    font-size: smaller;}
+.alert-error-msg .p1{
+    border:2px solid green;
+    background-color:lime;
+    color:black;
+    border-radius:20px ;
+    width:80px;
+    padding:2%;
+    text-align: center;
+    margin-top: 3%;
+    margin-left:65%;
+    font-size: medium;
+cursor: pointer;
+transition:0.3s ;
+}
+.alert-error-msg .p1:hover{
+    background-color:rgba(0, 255, 0, 0.63);
+}
+/*logout*/
+.alert-logout-check1{
+    background-color:white;
+    width: 30%;
+    max-width: 400px;
+    border-radius: 10px;
+    color: lime;
+    position: fixed; /* Fix position */
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the div */
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    height: 100px;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional for better UI */
+padding:2% 3%;
+
+display: none;
+border:3px solid green;
+    
+        }
+.alert-logout-check1 .p{
+    font-size: smaller;
+    color:lime;
+}
+.check{
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+    margin-top: 4%;
+}
+.check .p2{
+    border:2px solid maroon;
+    background-color: RED;
+    color:white;
+    border-radius:20px ;
+    width:80px;
+    padding:2%;
+    text-align: center;
+    /* margin-top: 3%;
+    margin-left:65%; */
+    font-size: medium;
+cursor: pointer;
+transition:0.3s ;
+}
+.check .p2:hover{
+    background-color:rgba(255, 0, 0, 0.616) ;
+}
+.check .p1{
+    border:2px solid cyan;
+    background-color:darkblue; 
+    color:white;
+    border-radius:20px ;
+    width:80px;
+    padding:2%;
+    text-align: center;
+    /* margin-top: 3%;
+    margin-left:65%; */
+    font-size: medium;
+cursor: pointer;
+transition:0.3s ;
+}
+.check .p1:hover{
+    background-color: rgba(0, 0, 139, 0.836);
+}
+@media  screen and (max-width : 600px) {
+    .alert-error{
+    width:60%;
+    max-width: 800px;
+}
+.alert-error-msg{
+    width:60%;
+    max-width: 800px;
+}
+.alert-logout-check1{
+    width:60%;
+    max-width: 800px;
+}
+}
+</style>
+<!--google icons-->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+ <!--font awesome icons-->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
+
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile">
+             <i class="fa fa-angle-left" aria-hidden="true" id="close-profile"></i>
+            <p>PROFILE</p>
+             
+        </div>
+        <hr class="line">
+        <div class="profile-store">
+            <div class="input-details1">
+               <i class="fa fa-user" aria-hidden="true"></i>
+               <p></p>
+           </div>
+            <div class="input-details2">
+               <i class="fa fa-envelope" aria-hidden="true"></i>
+               <p></p>
+            </div>
+            <div class="input-details3">
+               <i class="fa fa-phone" aria-hidden="true"></i>
+               <p></p>
+            </div>
+            <div class="profile-icon">
+               <p><i class="fa-solid fa-pencil"></i></p>
+           </div>
+       </div>
+       <hr class="hrline">
+       <div class="show-item-section">
+        <div class="show-items">
+            <div class="show-item">
+                <p><i class="fa-solid fa-cart-shopping"></i></p>
+                <div class="show-item-details">
+                    <div class="div">
+                        <h3>Cart</h3>
+                        <p>View your Cart</p>
+                    </div>
+                    
+                    <div class="div1">
+                        <!-- <p class="icon" onclick="goToCartPage()"><i class="fa fa-angle-right"  aria-hidden="true" ></i></p> -->
+                        <a class="icon" href="cartsection.html?from=profileshow"><i class="fa fa-angle-right" onclick="goToCartPage()" aria-hidden="true" ></i></a>
+                    </div>
+                </div>
+                
+               
+            </div>
+            <div class="show-item">
+                <p><i class="fa-solid fa-location-dot"></i></p>
+                <div class="show-item-details">
+                    <div class="div">
+                        <h3>Address</h3>
+                        <p>Save address for a hassle free checkout</p>
+                    </div>
+                    
+                    <div class="div1">
+                        <!-- <p class="icon"><i class="fa fa-angle-right" onclick="goToAddressPage()"  aria-hidden="true" ></i></p> -->
+                        <a class="icon" href="addaddress.html?from=profileshow"><i class="fa fa-angle-right" onclick="goToOrderPage()" aria-hidden="true" ></i></a> 
+                    </div>    
+                </div>
+                
+               
+            </div>
+            <div class="show-item">
+                <p><i class="fa-solid fa-receipt"></i></p>
+                <div class="show-item-details">
+                    <div class="div">
+                        <h3>Profile Details</h3>
+                        <p>Change your profile details</p>
+                    </div>
+                    <div>
+                        <p class="icon"><i class="fa fa-angle-right" onclick=" goToProfilePage()"  aria-hidden="true" ></i></p>
+                    </div>
+                </div>
+                
+               
+            </div>
+            <div class="show-item">
+                <p><i class="fa-solid fa-list-check"></i></p>
+                <div class="show-item-details">
+                    <div class="div"> 
+                        <h3>Orders</h3>
+                        <p>Check your order status</p>
+                    </div>
+                    <div class="div1">
+                        <p  class="icon"><i class="fa fa-angle-right" onclick="goToOrderPage()" aria-hidden="true" ></i></p>
+                        <!-- <a class="icon" href="addaddress.html?from=profileshow"><i class="fa fa-angle-right" onclick="goToOrderPage()" aria-hidden="true" ></i></a>  -->
+                    
+                    </div>    
+                </div>
+               
+            </div>
+        </div>
+        </div>
+        <hr class="hrlines">
+    <div class="logout">
+        <button onclick="logout()">LOGOUT</button>
+    </div>
+    <div class="alert-error" >
+        <p CLASS="p">SOMETHING WENT WRONG. PLEASE CHECK YOUR SERVER.</p>
+       <!-- <h5>AN ERROR OCCURRED. PLEASE TRY AGAIN</h5> -->
+        <P onclick="errormsg()" class="p1">OK</P>
+    </div>
+    <div class="alert-error-msg">
+        <p class="alert-text" class="p"></p>
+            <P onclick="seterrormsg()" class="p1">OK</P>
+    </div>
+    <div class="alert-logout-check1">
+        <p class="p">SURE..! YOU WANT LOGOUT.</p>
+        <div class="check">
+            <p onclick="setcheckmsgno()" class="p2">NO</p>
+            <p onclick="setcheckmsgok()" class="p1">YES</p>
+        </div>
+    </div>
+    
+       
+
+
+    
+    
+    
+    </div>
+
+
+    <script>
+
+        //CLOSE PROFILE PAGE
+var closeProfile=document.getElementById("close-profile");
+closeProfile.addEventListener("click", function(){
+   window.location.href="products.html";
+});
+
+//EDIT THE PROFILE
+document.querySelector(".profile-icon").addEventListener("click", async function () {
+    window.location.href = "profileget.html";
+   });
+
+// go to cart section
+function goToCartPage() {
+    let previousPage = localStorage.getItem("previousPage"); // Get the previous page
+ window.location.href = "cartsection.html";  // Navigate to cart
+}
+
+// go to address page
+function goToAddressPage(){
+      let previousPage = localStorage.getItem("previousPage"); // Get the previous page
+     window.location.href = "addaddress.html"; // Scrolls to #cart-section
+     }
+
+// go to check the order
+function goToOrderPage(){
+        
+        let previousPage = localStorage.getItem("previousPage"); // Get the previous page
+     window.location.href = "orderplaced.html"; // Scrolls to #cart-section
+     }
+
+// change profile
+function goToProfilePage(){
+    let previousPage = localStorage.getItem("previousPage"); // Get the previous page
+     window.location.href = "profileget.html"; // Scrolls to #cart-section
+}
+
+// add the profile details
+async function fetchAndDisplayProfile() {
+    const token = localStorage.getItem("token");
+    if (!token) {
+        console.error("Error: No token found! User is not authenticated.");
+        alert("User is not authenticated!");
+        return;
+    }
+
+    console.log("Token before fetch:", token);
+    try {
+        const response = await fetch("https://bloomtrack-herbal-plant-e-commerce.onrender.com/user/profile",
+        // const response = await fetch("http://localhost:3600/user/profile",
+         {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + token
+            }
+        });
+
+        if (response.ok) {
+            const userProfile = await response.json();
+            
+            // Ensure the userProfile object exists
+            if (!userProfile || Object.keys(userProfile).length === 0) {
+                console.error("No user profile data found.");
+                return;
+            }
+            document.querySelector(".input-details1 p").textContent =  userProfile.f_name + " " + userProfile.l_name;
+        document.querySelector(".input-details2 p").textContent =userProfile.email ;
+        document.querySelector(".input-details3 p").textContent = userProfile.phone;
+       
+            
+        } else {
+            document.querySelector(".alert-error").style.display="block";
+        await new Promise((resolve) => setTimeout(resolve, 3000));
+        errormsg();
+            // alert("Failed to load profile details.");
+        }
+    } catch (error) {
+        
+        console.error("Error fetching profile:", error);
+    }
+}
+
+function profilemsg() {
+    const successAlert = document.querySelector(".alert-profile-msg");
+    if (successAlert) {
+        successAlert.style.display = "flex"; // Show success message
+        setTimeout(() => {
+            successAlert.style.display = "none"; // Hide after 1.5s
+        }, 3000);
+    }
+}
+function errormsg() {
+    const errorAlert = document.querySelector(".alert-error");
+    if (errorAlert) {
+        errorAlert.style.display = "flex"; // Show error message
+        setTimeout(() => {
+            errorAlert.style.display = "none";
+        }, 3000);
+    }
+}
+function seterrormsg() {
+    const errorMsgAlert = document.querySelector(".alert-error-msg");
+    if (errorMsgAlert) {
+        errorMsgAlert.style.display = "flex"; // Show custom error message
+        setTimeout(() => {
+            errorMsgAlert.style.display = "none";
+        }, 3000);
+    }
+}
+
+// Call this function when the page loads
+fetchAndDisplayProfile();
+
+function logout() {
+    // Show confirmation popup first
+    document.querySelector(".alert-logout-check1").style.display = "block";
+}
+
+async function logoutNow() {
+    const token = localStorage.getItem("token");
+    if (!token) {
+        alert("User is not authenticated!");
+        return;
+    }
+
+    try {
+        const response = await fetch("https://bloomtrack-herbal-plant-e-commerce.onrender.com/user/logout",
+        // const response = await fetch("http://localhost:3600/user/logout",
+         {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + token
+            }
+        });
+
+        const result = await response.json();
+        if (response.ok) {
+            localStorage.removeItem("token");
+            // alert("Logout successful!");
+            window.location.href = "home1.html";
+        } else {
+            alert("Logout failed: " + result.message);
+        }
+    } catch (err) {
+        alert("Server error during logout.");
+    }
+}
+
+function setcheckmsgok() {
+    logoutNow();
+}
+
+function setcheckmsgno() {
+    document.querySelector(".alert-logout-check1").style.display = "none";
+}
+    </script>
+</body>
+</html>

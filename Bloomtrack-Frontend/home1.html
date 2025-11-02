@@ -1,0 +1,699 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOEM PAGE</title>
+    <!--css-->
+    <style>
+        *{
+    padding: 0px;
+    margin: 0%;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+   font-size: larger;
+
+   }
+   .navbar{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color:green;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+transition:.3s ease-in-out;
+color:white ;
+align-items: center;
+}
+.navbar-links-img{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.navbar-links{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 10px;
+}
+.navbar-link a{
+    color:white ;
+    text-decoration: none;
+    margin-left: 10px; 
+}
+.navbar-link a:hover{
+    
+color:green;
+background-color:white;
+border-radius: 10%;
+padding-top: 10%;
+padding-bottom: 10%;
+padding-left: 10%;
+padding-right: 10%;
+margin-left: 2%;
+}
+.navbar-menu-toggle{
+    display:none;
+    font-size:25px ;
+    
+}
+.navbar-menu-toggle:hover{
+    cursor: pointer;
+}
+.side-navbar{
+    width:60%;
+    position: fixed;
+    background-color:green;
+
+    color: white;
+    height: 100%;
+    top: 0%;
+    left:-60%;
+    transition: 3s;
+    
+}
+.side-navbar .bar{
+    margin: 7%;
+    text-align: right;
+    
+}
+.bar:hover{
+    cursor: pointer;
+}
+.side-navbar-link{
+    padding-top:10%;
+    margin-left: 20%;
+}
+
+.side-navbar-link a{
+    text-decoration: none;
+    color: white;
+   
+
+}
+.side-navbar-link a:hover{
+   color: green;
+    background-color:white;
+border-radius: 5%;
+padding-top:5%;
+padding-bottom:5%;
+padding-left: 3%;
+padding-right: 3%;
+
+}
+@media  screen and (max-width:600px) {
+    
+   .navbar-menu-toggle{
+   display: block;}
+   .navbar-links{
+   display: none;}}
+/*HEADER TAG*/
+.header{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding-top:50px;
+    
+}
+.header h2{
+   
+    color: #004D00;
+}
+.header p{
+    margin-top: 2%;
+
+}
+.header-button {
+    padding: 12px;
+    margin-top: 10px;
+    background-color:green;
+    color: white;
+    cursor: pointer;
+    transition: 2s;
+    border: none;
+}
+.header-button:hover{
+    cursor: pointer;
+    background-color:#57FF57 ;
+    color: black;
+}
+/* BLINK THE EMAGE*/
+.header-img{
+    animation:bligfnker 2s linear infinite;
+}
+@keyframes blinker{
+    50%{
+        opacity: 0.2;
+    }
+}
+@keyframes blin{
+    50%{
+        opacity: 0.2;
+    }
+
+}
+
+@media  screen and (max-width:600px) {
+.header-img {
+        display: none;
+    }}
+    /*SERVICE TAG*/
+    .service{
+margin-top: 5px;
+    }
+    .service-container1{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .service-container1 h2{
+        width:60%;
+        
+    }
+    @media  screen and (max-width:600px) {
+        
+        .service-container1{
+      display: none;
+    }
+    }
+    .service-container2{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 20px;
+        margin-top: 15px;
+        margin-left: 2%;
+margin-right: 2%;
+
+    }
+    .service-items{
+background-color:  rgba(172, 255, 47, 0.349);
+border: 1px;
+
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+margin-bottom: 2%;
+gap: 10px;
+width:100%;
+border: 1px solid greenyellow;
+padding: 2%;
+padding-left: 5%;
+
+border-radius: 2%;
+    }
+    .icons{
+    
+    margin-top: 5%;
+    }
+    .service-item{
+        margin-left: 5%;
+        
+        }
+        .service-item h5{
+        padding-bottom: 2%;}
+       
+    @media  screen and (max-width:600px) {
+        .service-container2{
+        flex-direction: column;
+        
+        }
+        .service-items{
+            width:95%;  
+        }
+        
+    } 
+    .new-arrival-head{
+        margin-top: 5px;
+    }
+    .new-arrival-head h2{
+        color: #004D00;
+    }
+   
+        .new-arrival{
+           
+           justify-content: space-around;
+           display: flex;
+flex-direction: row;
+padding-top: 10px;
+gap: 20px;
+        }
+        
+   
+    .new-arrival-container{
+    
+    height: 350px;
+        border: 3px solid green;
+        position:relative;
+    flex-basis:20%;
+    
+   }
+   .new-arrival-container h3{
+    color:green;
+    text-align: center;
+    padding-bottom: 2%;
+    padding-top: 2%;
+   }
+   .new-arrival button{
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color:green;
+    color:white;
+    border: none;
+    margin-top: 10px;
+position: absolute;
+font-size: larger;
+top:75%;
+left: 0%;
+}
+    
+    .layin{
+        padding-left: 2%;
+    }
+    
+        @media  screen and (max-width:600px) {
+        .new-arrival{
+            flex-wrap: wrap;
+        }
+    }
+    .footer{
+        margin-top: 3%;
+        
+    }
+    
+        
+    .footer-container{
+       
+        padding: 2%;
+        border: 1px solid greenyellow;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+       
+    
+}
+.footer-container h2{
+    color: #004D00;
+}
+/*contact*/
+.contacts{
+    margin-top: 3%;
+    
+    background:#edffc1;
+        padding: 2%;
+        border: 1px solid greenyellow;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        display: flex;
+
+flex-wrap: wrap; 
+}
+
+.contacts h2{
+color: #004D00;
+}
+    .contacts div
+{
+    flex-grow: 1;
+    flex-basis: 20px;
+   
+}
+.details{
+    display: flex;
+    
+    justify-content: space-between;
+gap: 3%;
+        margin-top: 15px;
+        margin-left: 2%;
+
+}
+.detail1{
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    padding: 10px;
+    
+   
+    border-radius: 5px;
+margin-right: 5px;
+border-radius: 5%;
+}
+#icons{
+    color: #004D00;
+}
+.layin{
+    margin-bottom: 5%;
+    padding-top: 15px;
+    
+}
+#contactLink1{
+    text-decoration: none;
+}
+#contactLink1:hover{
+    text-decoration: underline;
+}
+.details1{  gap: 5%;}
+/*location media screen*/
+@media screen and (max-width: 600px) {
+    .contacts {
+        flex-direction: column;
+        align-items: start; /* Center content */
+        min-height: 800px; /* Increase height */
+        padding-bottom: 20px; /* Extra space for better spacing */
+    }
+    
+    .details {
+        flex-direction: column;
+        align-items: center;  /* Fix long gap */
+        width: 170%;
+    }
+
+    .detail1 {
+        width: 90%; /* Allow content to stretch properly */
+        text-align: center;
+        margin-bottom: 3%;
+    }
+
+    .layin {
+        padding-top: 10px; /* Fix overlapping */
+    }
+
+    .contacts div {
+        margin-top: 3%;
+    }
+}
+
+
+.contact-details{
+    position: absolute;
+padding:2%;
+    width:30%;
+    border: 2px solid green;
+    top: 50%;
+    left: 30%;
+    background-color: white;
+    display: none;
+    border-radius: 5%;
+}
+.bar{
+    text-align: right;
+}
+.contact-detail h5{
+    padding-top:4%;
+  }
+ 
+    #contactLink{
+    width: 100%;
+    padding: 2%;
+background-color: black;
+color: white;
+margin-top: 3%;
+cursor: pointer;
+font-size: medium;
+ }
+ .footer-icons{
+    margin-top: 2%;
+
+    
+ }
+ #footer-icon{
+    border-radius: 100%;
+    border: 1px solid #004D00;
+    color:green;
+    padding: 4%;
+ }
+ #footer-icon:hover{
+background-color: green;
+    cursor: pointer;
+    color: white;
+ }
+ @media  screen and (max-width:600px) {
+    .contact-details{
+        width: 60%;
+    height:200px ;
+margin-left: -10%;}
+ }
+    </style>
+    <!--google icons-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <!--font awesome icons-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
+    
+</head>
+<body>
+    <div class="home-page">
+        <!--HOME PAGE-->
+        
+   
+            <nav class="navbar">
+                <div class="navbar-links-img">
+                    <h1>Bloomtrack plant</h1>
+                <img src="image/logo.png" width="70" height="60">
+                </div>
+                <div class="navbar-links">
+                    
+                    <p class="navbar-link">
+                        <a href="home1.html"><b>HOME</b></a>
+                    </p>
+                    <p class="navbar-link">
+                        <a href="login.html"><b>LOGIN</b></a>
+                    </p>
+                    <p class="navbar-link">
+                        <a href="signup.html"><b>SIGNUP</b></a> 
+                    </p>
+                </div>
+                <div class="navbar-menu-toggle" onclick="showNavbar()">
+                    <!----font awesome bars icons use---->
+                    <i class="fa-solid fa-bars"></i>
+                    </div>
+            </nav>
+    <div class="side-navbar">
+        <p class="bar" onclick="closeNavbar()">
+            <i class="fa-solid fa-xmark" ></i>
+        </p>
+        <div class="side-navbar-links">
+            <p class="side-navbar-link">
+                <a href="home1.html"><b>HOME</b></a>
+            </p>
+            <p class="side-navbar-link">
+                <a href="login.html"><b>LOGIN</b></a>
+            </p>
+            <p class="side-navbar-link">
+                <a href="signup.html"><b>SIGNUP</b></a>
+            </p>
+            
+        </div>
+</div>
+<div class="header">
+    <div>
+        <h2>Office plant.</h2>
+        <h2>Garden & Home</h2>
+        <p>With our Natural plant product </p>
+        <a href="signup.html">
+           <button class="header-button" id="shopbutton" onclick="window.location.href='signup.html'">Shop Now</button>
+        </a>
+    </div>
+    <div class="header-img">
+        <img src="image/herbal-plant.jpg" width="200" height="200">
+    </div>
+</div>
+<!--service-->
+<div class="service">
+    <div class="service-container1">
+        <div>
+            <h2>We Provide Best Customer Experiences</h2>
+        </div>
+        <div>
+            <p>||We ensure that our customer have the best shopping experience</p>
+        </div>
+    </div>
+   
+
+<div class="service-container2">
+    <div class="service-items">
+       
+       <i class="fas fa-truck" class="icons" style="font-size: 30px;"></i>
+       
+            <div class="service-item">
+            <h5>
+                Fast and Free Shipping
+            </h5>
+            <p>
+                Free delivery for all order over rs 100
+            </p>
+        </div>
+        </div>
+        <div class="service-items">
+            <i class="fa-solid fa-headset" class="icons" style="font-size: 30px;"></i>
+            <div class="service-item">
+                <h5>
+                    24/7 Customer Support
+                </h5>
+                <p>
+                    Friendly 24/7 Customer Support  
+                </p>
+            </div> 
+            </div>
+</div>
+    <div class="service-container2">
+    
+        <div class="service-items">
+            <i class="fa-solid fa-pen-to-square" class="icons" style="font-size: 30px;"></i>
+            <div class="service-item">
+                <h5>
+                    Money Back Guarantee
+                </h5>
+                <p>
+                    We return  money within 30 days 
+                </p>
+            </div>
+        </div> 
+    <div class="service-items">
+        <i class="fa-solid fa-gift" class="icons" style="font-size: 30px;"></i>
+        <div class="service-item">
+        <h5>Member Gifts</h5>
+        <p>Discount Coupons Weekdays</p></div>
+    </div> 
+</div>
+<!--ARRIVAL ITEM-->
+<div class="new-arrival-head">
+    <h2>Featured plant</h2>
+    <div class="new-arrival">
+    <div class="new-arrival-container">
+            <h3>HERBAL PLANT</h3>
+            <img src="image/plant3.jpg" width="270" height="200">
+            <button onclick="window.location.href='signup.html'">Shop Now <i class="fa-solid fa-arrow-right"></i></button>
+           
+               
+              
+    </div>
+    <!---2--->
+    <div class="new-arrival-container">
+        <h3>HERBAL SEED</h3>
+            <img src="image/herbal seed.jpg" width="271" height="200">
+            <button onclick="window.location.href='signup.html'">Shop Now <i class="fa-solid fa-arrow-right" ></i>
+               </button>
+
+           
+    </div>
+<div class="new-arrival-container">
+        <h3>HERBAL FLOWER</h3>
+        <img src="image/herbal flower1.jpg" width="270" height="200">
+        <button onclick="window.location.href='signup.html'">Shop Now <i class="fa-solid fa-arrow-right"></i></button>
+       
+</div>
+ 
+</div><!---new-arrival clse---->
+</div>
+
+
+    <!--- CONTACT-->
+     <div class="contacts">
+     <div class="contacts1">
+     <h2>Location</h2>
+     <div class="details">
+     <div class="detail1">
+        <i class="fa-solid fa-location-dot" id="icons" style="font-size: 30px;"></i>
+        <div  class="layin">
+            
+            <h5> Bloomtrack Herbal-Plant</h5>
+<p>Mutt Street</p>
+<p>Kumbakonam</p>
+        </div>
+    </div>
+     <div class="detail1" >
+        
+        <i class="fa-brands fa-whatsapp" id="icons" style="font-size: 30px;"></i>
+        <div class="layin">
+        <a href="#" onclick="openlayin()" id="contactLink1" style="color:#004D00;" >whatsapp : +91 9025517125</a>
+                    
+            <p>24/7 Customer Support</p>
+        <p>Mon-Sun; 10:00 - 5:00</p>
+        </div>   
+    </div>
+    <div class="detail1">
+        <i class="fa-regular fa-clock" id="icons" style="font-size: 30px;"></i>
+        <div  class="layin">
+            <h5>online store Always open</h5>
+         <p>Mon-Sun: 24/7</p>
+     
+        </div>
+     </div>
+    <div class="detail1">
+ <i class="fa-solid fa-envelope" id="icons" style="font-size: 30px; "></i>
+ <div  class="layin">
+ <h5>Bloomtrack2025@gmail.com</h5>
+ <div class="footer-icons" style="font-size: 20px;">
+    <i class="fa-brands fa-instagram" id="footer-icon"></i>
+        <i class="fa-brands fa-youtube"   id="footer-icon"></i>
+        <i class="fa-brands fa-facebook"  id="footer-icon"></i>
+       
+    </div>
+ </div>
+ 
+</div>
+    
+
+
+
+</div></div></div>
+
+            
+            <div class="contact-details">
+                <p class="bar" onclick="closelayin()">
+                    <i class="fa-solid fa-xmark" style="font-size: 30px; color:green;"></i>
+                </p>
+        <i class="fa-regular fa-message" style="font-size: 30px; color:green;"></i>
+        <div class="contact-detail">
+        <h5>Hi There!</h5>
+        <h5>How Can I Help You</h5>
+    </div>
+    <div class="contact-detail1">
+
+
+    <button onclick="openwhatsapp()" id="contactLink"><i class="fa-brands fa-whatsapp" class="icons" style="font-size: 30px; color:white; padding-right: 5%;"></i>Start Chat With US<i class="fa-solid fa-arrow-right" class="icons" style="font-size: 20px; color:white; padding-left: 20%;"></i></button> 
+</div>         
+            </div>
+
+</div>
+    <script>
+        var sideNavbar=document.querySelector('.side-navbar');
+function showNavbar(){
+    sideNavbar.style.left='0%'
+}
+function closeNavbar(){
+    sideNavbar.style.left='-60%';
+}
+
+var contactDetails=document.querySelector('.contact-details');
+function openlayin(){
+    contactDetails.style.display="block";
+}
+function closelayin(){
+    contactDetails.style.display="none";
+}
+function openwhatsapp(){
+    
+    var phoneNumber="9025517125";
+    var message="hello! Haii welcome to bloomtack herbal plant"
+    var url=`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+window.open(url,"_blank");
+
+}
+// document.getElementById("shopbutton").addEventListener("click",function(){
+
+// })
+    </script>
+</body>
+</html>

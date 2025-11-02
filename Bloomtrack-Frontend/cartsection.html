@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart section</title>
+    <!--css-->
+    <style>
+        *{
+    padding: 0px;
+    margin: 0%;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+  font-size: larger;
+    background-color: #f5f5f5;
+    
+}
+/*CART DROP DOWN*/
+
+/* .cart-section{
+         width: 100%;
+    height: 5000%; 
+    position:absolute;
+    background-color: white;
+    z-index:1000;
+    left:0%;
+    top:0%;
+    box-shadow: rgb(0, 0, 0) 0px 10px 20px, rgb(0, 0, 0) 0px 6px 6px;
+    padding-top: 1%;
+ 
+   } */
+ .lay-inner p{
+    font-size:larger;
+    color:green;
+  }
+.lay-inner{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 20px;
+    margin-top: 10px;
+    gap:20px;
+}
+.lay-inner i{
+    font-size:larger;
+    cursor: pointer;
+    transition: 0.3s;
+    }
+    .lay-inner i:hover{
+        background-color: rgba(128, 128, 128, 0.308);
+        color:blaack;
+        padding:10px;
+        border-radius: 100%;
+        width:25px;
+    text-align: center;
+    }
+    .cart-section .line{
+    border-color:grey;
+    border-width: 100%;
+    margin-top: 1%;
+}
+.cart-empty h2{
+    background: rgba(128, 128, 128, 0.205);
+    padding: 1%;
+    margin-top: 2%;
+}
+.cart-empty button{
+    background-color: green;
+    color:white;
+    border: none;
+    border-radius: 2px;
+    padding: 20px;
+    margin-top: 3%;
+    text-align: center;
+    margin-left: 5%;
+    cursor: pointer;
+}
+/* create table*/
+.create-table {
+    margin: 3%;
+    width: 90%;
+    overflow-x: auto; /* Allows scrolling if needed */
+    display: none;
+    margin-left: 10%;
+}
+
+.create-table table {
+    width: 90%;
+
+    border-collapse: collapse; /* Removes double borders */
+    text-align: left; /* Aligns text inside the table */
+    background: white; /* Background color */
+}
+
+/* Style table headers */
+.create-table th {
+    background: white; /* Dark background for headers */
+    color: rgba(0, 0, 0, 0.986); /* White text */
+    padding: 12px; /* Space inside the headers */
+    border: 1px solid black; /* Border */
+text-align:center;
+}
+
+/* Style table rows */
+.create-table td {
+    padding: 10px; /* Space inside cells */
+    border: 1px solid grey; /* Border for each cell */
+}
+
+/* Add spacing between table rows */
+.create-table tr {
+    border-bottom: 1px solid gray;
+}
+
+/* Optional: Make the table more readable */
+.create-table tbody tr:nth-child(even) {
+    background: #f9f9f9;
+}
+/*table ow3n crreate style*/
+.del-but{
+    background-color: green;
+    color:white;
+    border:none;
+    padding-left:20px;
+    padding-right:20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+cursor: pointer;
+    
+}
+#product-table td {
+    text-align: center;  /* Center text horizontally */
+    vertical-align: middle; /* Center content vertically */
+}
+/* .tbody{
+    text-align: center;
+    
+} */
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adds spacing between cart items */
+}
+
+.cart-item-content {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Space between image and details */
+    margin-left: 2%;
+    margin-top: 2%;
+    width:75%;
+}
+
+.cart-item-image {
+    width: 100px;
+    height: 100px;
+    
+    object-fit: cover;
+    border-radius: 5px; /* Optional: rounds corners */
+}
+
+.cart-item-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+width:50%;
+}
+
+/* set style in icons */
+.counter-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 24px;
+    background: white;
+   
+    border-radius: 5px;
+justify-content: center;
+    margin-top: 4%;
+    text-align: center;
+  
+}
+.counter-container i{
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+.counter-container i:hover {
+    background: lightgray;
+}
+.product-image{
+    border-radius:15px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+/* toal cart amount*/
+.total-cart{
+   margin-top:3%;
+   width:50%;
+   border:1px solid grey;
+   margin-left: 20%;
+}
+.total-cart h3{
+   padding:2%; 
+    color: #004D00;
+    text-align: center;
+}
+
+.total-cart-lay div{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top:2%;
+    margin-right: 15px;
+    margin-left:2%; 
+}
+.total-cart-lay button{
+    background-color: green;
+    color:white;
+    padding:15px;
+    border:1px solid green;
+    width:100%;
+    cursor: pointer;
+    font-size:large ;
+    transition: 0.3s;
+    margin-top: 5px;
+}
+.total-cart-lay button:hover{
+background-color: rgba(0, 128, 0, 0.521);
+} 
+.minus-but , .plus-but{
+padding:2% 5% 2% 5%;
+font-weight: bold;
+margin: 5% 5%;
+}
+.address-open {
+    text-decoration: none;
+    background-color: green;
+    width:96%;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    margin-top: 1%;
+   
+}
+.address-open:hover{
+    background-color: rgba(0, 128, 0, 0.521);
+}
+/*DELTE CART*/
+
+.alert-logout-check1{
+    background-color:white;
+    width: 30%;
+    max-width: 400px;
+    border-radius: 10px;
+    color: red;
+    position: fixed; /* Fix position */
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the div */
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    height: 100px;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional for better UI */
+padding:2% 3%;
+
+display: none;
+border:3px solid red;
+    
+        }
+.alert-logout-check1 .p{
+    font-size: smaller;
+    color:red;
+}
+.check{
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+    margin-top: 4%;
+}
+.check .p2{
+    border:2px solid cyan;
+    background-color:darkblue;
+    color:white;
+    border-radius:20px ;
+    width:80px;
+    padding:2%;
+    text-align: center;
+    /* margin-top: 3%;
+    margin-left:65%; */
+    font-size: medium;
+cursor: pointer;
+transition:0.3s ;
+}
+.check .p2:hover{
+    background-color:rgba(0, 0, 139, 0.836);
+}
+.check .p1{
+    border:2px solid GREEN;
+    background-color:LIME; 
+    color:white;
+    border-radius:20px ;
+    width:80px;
+    padding:2%;
+    text-align: center;
+    /* margin-top: 3%;
+    margin-left:65%; */
+    font-size: medium;
+cursor: pointer;
+transition:0.3s ;
+}
+.check .p1:hover{
+    background-color:rgba(0, 255, 0, 0.63) ;
+}
+/*media query*/
+@media screen and (max-width: 600px) {
+    .cart-section {
+        height: 5500vh; 
+        overflow-y: auto; 
+    }
+    .cart-section .line{
+    margin-top: 2%;}
+    .total-cart{
+width:80%;
+    }
+ 
+}
+</style>
+<!--google icons-->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+ <!--font awesome icons-->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
+
+</head>
+<body>
+    <!--cart drop down-->
+    <div class="cart-section" id="cart-section">
+        <div class="lay1">
+            <div class="lay-inner">
+                <i class="fa fa-angle-left" aria-hidden="true" onclick="closeCart()"></i>
+                <p>CART</p>
+            </div>
+            <div><hr class="line"></div>
+            <div class="cart-empty">
+                <h2 >your cart is currently empty</h2>
+                <button onclick="window.location.href='products.html'">Return To Shop</button>
+            </div>
+           
+            <div class="create-table">
+                <div>
+                    <table id="product-table">
+                        <thead>
+                            <tr>
+                                <th>IMAGE</th>
+                                <th>PRODUCT</th>
+                                <th>PRICE</th>
+                                <th>QUANTITY</th>
+                                <th>SUBTOTAL</th>
+                                <th>REMOVE</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                       
+                        </tbody>
+                    </table>
+                </div>
+                <div class="total-cart">
+                    <h3>CART TOTAL</h3>
+                    <hr class="line" style="color: grey;">
+                    <div class="total-cart-lay">
+                        <div id="total-items">
+                            <p>Price Details </p>
+                            <p>(0 Items)</p>
+                        </div>
+                        <div>
+                            <P>Total Product Price</P>
+                            <p id="total-price">+RS 0</p>
+                        </div>
+                        <hr class="line">
+                        <div class="price-div">
+                            <P>Order Total</P>
+                           <p id="order-total">RS 0</p>
+                        </div>
+                        
+                        <!-- <button  class="address-open" onclick="openaddress(event)">CONTINUE</button> -->
+                       
+                        <a href="addaddress.html?from=cartsection" class="address-open" onclick="openaddress(event)">CONTINUE</a>
+
+                        <!-- onclick="openaddress(event)" -->
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="alert-logout-check1">
+            <p class="p">SURE..! YOU WANT DELETE</p>
+            <div class="check">
+                <p onclick="setcheckmsgno()" class="p2">NO</p>
+                <p onclick="setcheckmsgok()" class="p1">YES</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        //address page nav
+function openaddress(){
+window.location.href="addaddress.html";
+localStorage.setItem("cartData", JSON.stringify(globalCartData));
+}
+function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    console.log("Full URLSearchParams:", urlParams.toString()); // Debugging
+    console.log("Query Param Requested:", param);
+    return urlParams.get(param);
+}
+function closeCart() {
+    const fromPage = getQueryParam('from');
+    console.log("fromPage:", fromPage); // Debugging output
+
+    if (fromPage === 'profileshow') {
+        // alert("Navigating to Profile Show");
+        window.location.href = 'profileshow.html';
+    } else if (fromPage === 'products') {
+        // alert("Navigating to Cart Section");
+        window.location.href = 'products.html';
+    }
+    else 
+    {
+        // alert("Navigating to Default Page");
+        window.location.href = 'products.html'; // Default fallback
+    }
+}
+// table form
+let globalCartData = []; // Stores API product details
+let globalTableData = []; // Stores table row data
+
+document.addEventListener("DOMContentLoaded", async function () {
+    let token = localStorage.getItem("token");
+    if (!token) {
+        alert("User not authenticated! Please log in.");
+        window.location.href = "login.html";
+        return;
+    }try {
+        const response = await fetch("https://bloomtrack-herbal-plant-e-commerce.onrender.com/products/cartlist",
+        // const response = await fetch("http://localhost:3600/products/cartlist", 
+        {
+            method: "GET",
+            headers: {
+                "Content-type": "application/json",
+                "Authorization": "Bearer " + 
+                token
+            }
+        });if (response.ok) {
+            // ✅ Store API response (products) in globalCartData
+            globalCartData = await response.json();
+
+            console.log("Global Cart Data:", globalCartData); // Debugging
+
+            if (globalCartData.length > 0) {
+                console.log("First Product Image:", globalCartData[0].productImage);
+            } else {
+                console.log("No products found in cart.");
+            }
+
+            renderCartTable(); // Render the cart table
+        }
+    } catch (error) {
+        console.log("Error fetching cart data:", error);
+    }
+});
+console.log("globalCartData products"+globalCartData);
+function renderCartTable() {
+    let tableBody = document.getElementById("product-table").getElementsByTagName("tbody")[0];
+    tableBody.innerHTML = ""; // Clear previous table content
+
+    if (globalCartData.length === 0) {
+        document.querySelector(".cart-empty").style.display = "block";
+        document.querySelector(".create-table").style.display = "none";
+        updateCartTotals();
+        return;
+    }
+
+    document.querySelector(".cart-empty").style.display = "none";
+    document.querySelector(".create-table").style.display = "block";
+
+    globalTableData = []; // ✅ Reset table data before filling it again
+
+    globalCartData.forEach((product, index) => {
+        let row = tableBody.insertRow();
+        row.innerHTML = `
+            <td><img src="${product.productImage}" alt="product" width="100"></td>
+            <td>${product.productName}</td>
+            <td>${product.productPrice}</td>
+            <td>
+                <button onclick="updatequantity('${product._id}', 'min', ${index})">-</button>
+                <span>${product.qty}</span>
+                <button onclick="updatequantity('${product._id}', 'add', ${index})">+</button>
+            </td>
+            <td>${(product.qty * product.productPrice).toFixed(2)}</td>
+            <td><button class="del-but" onclick="deleteProduct('${product._id}',this)">Delete</button></td>`;
+
+        // ✅ Store full product details along with row HTML inside globalTableData
+        globalTableData.push({
+            productId: product._id,
+            productName: product.productName,
+            productImage: product.productImage,
+            productPrice: product.productPrice,
+            quantity: product.qty,
+            totalPrice: (product.qty * product.productPrice).toFixed(2),
+            rowHTML: row.innerHTML // ✅ Store the row HTML
+        });
+    });
+
+    console.log("Global Table Data (Full Details):", globalTableData); // Debugging
+    updateCartTotals();
+}
+
+// ✅ Access stored product details after a delay
+setTimeout(() => {
+    console.log("Stored Table Data (after delay):", globalTableData);
+    
+    if (globalTableData.length > 0) {
+        console.log("stored the all product"+ globalTableData);
+        console.log("First Product Details:", globalTableData[0]); // ✅ Full product details
+        console.log("First Product Image:", globalTableData[0].productImage); // ✅ Access first product image
+    }
+}, 6000);
+
+
+// console.log("stored the all product"+ globalTableData);
+
+function getProductById(productId) {
+    return globalCartData.find(product => product._id === productId);
+}
+
+//increment and decrement
+async function updatequantity(id, op, index) {
+    let token = localStorage.getItem("token");
+    let product = globalCartData.find(item => item._id === id);
+
+    if (!product) return; // Exit if product is not found
+
+    let newQty = op === "add" ? product.qty + 1 : Math.max(product.qty - 1, 1);
+
+    try {
+        const response = await fetch(`http://localhost:3600/user/cart/${op}/${id}`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + token
+            }
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            console.log("API Response:", data);
+           if (data !== undefined) {
+             globalCartData[index].qty = data.qty 
+ console.log('88888'+globalCartData)
+             // ✅ Re-render table and update totals
+                renderCartTable();
+            }
+        } else {
+            const errordata = await response.json();
+            console.error("API Error Response:", errordata);
+            alert(errordata.message);
+        }
+    } catch (error) {
+        console.error("Error updating quantity:", error);
+        alert("Error: Unable to update quantity.");
+    }
+}
+
+
+// Function to update total quantity and total price
+function updateCartTotals() {
+    let totalItems = 0;
+    let totalPrice = 0;
+    
+    let rows = document.querySelectorAll("#product-table tr");
+
+    if (rows.length === 0) {
+        console.log("Cart is empty, updating totals.");
+        document.querySelector("#total-items p:nth-child(2)").innerText = `(0 Items)`;
+        document.querySelector("#total-price").innerText = `+RS 0.00`;
+        document.querySelector("#order-total").innerText = `RS 0.00`;
+        return; // Exit function early
+    }
+
+    rows.forEach(row => {
+        let qtyElement = row.cells[3]?.querySelector("span");
+        let priceElement = row.cells[4];
+
+        if (qtyElement && priceElement) {
+            let qty = parseInt(qtyElement.innerText);
+            let price = parseFloat(priceElement.innerText);
+
+            totalItems += qty;
+            totalPrice += price;
+        }
+    });
+
+    document.querySelector("#total-items p:nth-child(2)").innerText = `(${totalItems} Items)`;
+    document.querySelector("#total-price").innerText = `+RS ${totalPrice.toFixed(2)}`;
+    document.querySelector("#order-total").innerText = `RS ${totalPrice.toFixed(2)}`;
+}
+//delete product in cart
+let pendingDelete = { productId: null, button: null };
+
+function deleteProduct(productId,button) {
+    pendingDelete = { productId, button };
+    document.querySelector(".alert-logout-check1").style.display = "block";
+}
+function setcheckmsgok() {
+    if (pendingDelete.productId && pendingDelete.button) {
+        deleteProductS(pendingDelete.productId, pendingDelete.button);
+    }
+    document.querySelector(".alert-logout-check1").style.display = "none";
+}
+
+function setcheckmsgno() {
+    pendingDelete = { productId: null, button: null };
+    document.querySelector(".alert-logout-check1").style.display = "none";
+}
+async function deleteProductS(productId,button) {
+    const token = localStorage.getItem("token");
+
+    try {
+        const response = await fetch(`http://localhost:3600/user/cart/${productId}`, {
+            method: "DELETE",
+            headers: {
+                "Authorization": "Bearer " + token
+            }
+        });
+        
+        const result = await response.json();
+console.log(result);
+        if (response.ok) {
+            // document.querySelector(".alert-logout-check1").style.display = "block";
+globalCartData = globalCartData.filter(item => item._id !== productId);
+button.closest("tr").remove(); 
+            renderCartTable();
+        } else {
+            alert(result.message || "Failed to delete product");
+        }
+
+    } catch (error) {
+        console.error("Delete Error:", error);
+        alert("Error: Could not delete product.");
+    }
+}
+
+
+
+
+
+</script>
+</body>
+</html>
