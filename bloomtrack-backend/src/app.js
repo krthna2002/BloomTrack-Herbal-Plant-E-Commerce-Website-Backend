@@ -1,5 +1,5 @@
 const express = require('express')
-require("./db/mongoose")
+const connectDB = require("./db/mongoose")
 const userProfile = require("./routes/userProfileRoutes")
 const products = require('./routes/productRoutes')
 const orders = require('./routes/orderRoutes')
@@ -18,11 +18,11 @@ const corsOptions = {
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS","PATCH"]
 };
 
-
-// app.listen(3500, () => {
-//     console.log("Server is running on port 3500");
+// const PORT = process.env.PORT || 3003
+// app.listen(PORT, () => {
+//     console.log("Server is running on port 3500" + PORT);
 // });
-
+connectDB();
 
 app.use(cors(corsOptions));
 app.use(function(req, res, next){

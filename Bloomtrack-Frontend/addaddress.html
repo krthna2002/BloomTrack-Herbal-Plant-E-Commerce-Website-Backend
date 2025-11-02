@@ -935,10 +935,6 @@ function seterrormsg() {
     }
 }
 
-
-// <button onclick="deleteAddress(${index})">Delete</button>
-                    // <button onclick="deleteAddress(${index})">Deliver </button>
-// Fetch and Display Saved Addresses
 async function fetchAndDisplayAddresses() {
     const token = localStorage.getItem("token");
     if (!token) {
@@ -949,7 +945,7 @@ async function fetchAndDisplayAddresses() {
 
     console.log("Token before fetch:", token);
     try {
-        const response = await fetch("http://localhost:3600/user/profile", {
+        const response = await fetch("https://bloomtrack-herbal-plant-e-commerce.onrender.com/user/profile", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -1044,7 +1040,7 @@ const aid = addressList[index].getAttribute("data-address-id");
     // const aid = addressList[index].dataset.addressId;
     // console.log("Deleting address with ID:", aid);
     try{
-response=await fetch(`http://localhost:3600/user/address/${aid}`,{
+response=await fetch(`https://bloomtrack-herbal-plant-e-commerce.onrender.com/user/address/${aid}`,{
 method: "DELETE",
 headers:{
     "Content-type" : "application/json",
@@ -1055,10 +1051,6 @@ const responseData =await response.json();
 console.log("remove id"+ responseData);
 if(response.ok){
    
-    // setTimeout(() => {
-        
-    // }, timeout);
-    // alert("Address removed successfully");
     addressList[index].remove(); // Remove from UI
     fetchAndDisplayAddresses(); // Refresh UI
     document.querySelector(".alert-add-remove").style.display="block";
@@ -1085,11 +1077,7 @@ function addremove(){
         }, 2000);
     }
 }
-/** GO TO THE DELIVER PAGE*/
-// function finalfun(event){
-//     window.location.href = "finalpage.html";
-// }
-/*****/
+
 function finalfun(event,addressData) {
     
     const addressDiv = event.target.closest(".address-box");
@@ -1106,21 +1094,6 @@ console.log(addressData._id);
     window.location.href = "finalpage.html";
 
 
-      // Extract address details correctly
-    // const fullName = addressDiv.querySelector("h3").textContent.trim();
-    // const houseArea = addressDiv.querySelectorAll("h6")[0].textContent.trim();
-    // const city = addressDiv.querySelectorAll("h6")[1].textContent.trim();
-    // const stateZip = addressDiv.querySelectorAll("h6")[2].textContent.trim();
-    // const phone = addressDiv.querySelectorAll("h6")[3].textContent.trim();
-
-    // const addressDetails = {
-    //     fullName: fullName,
-    //     houseArea: houseArea,
-    //     city: city,
-    //     stateZip: stateZip,
-    //     phone: phone
-    // };
-
 }
 function errormsgdel()
 {
@@ -1135,22 +1108,6 @@ function errormsgdel()
     }
 }
 
-/*******/
-
-// function finalfun(event) {
-//     // let selectedAddress = event.target.parentElement.querySelector("h6").innerText;
-//     localStorage.setItem("selectedAddress", selectedAddress);
-
-//     // let previousPage = localStorage.getItem("previousPage");
-//     // if (previousPage === "cart") {
-//         window.location.href = "finalpage.html";
-//     // } else {
-//     //     window.location.href = "profile.html";
-//     // }
-// }
-
-
-     
 
 
 

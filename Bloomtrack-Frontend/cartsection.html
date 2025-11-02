@@ -552,7 +552,7 @@ async function updatequantity(id, op, index) {
     let newQty = op === "add" ? product.qty + 1 : Math.max(product.qty - 1, 1);
 
     try {
-        const response = await fetch(`http://localhost:3600/user/cart/${op}/${id}`, {
+        const response = await fetch(`https://bloomtrack-herbal-plant-e-commerce.onrender.com/user/cart/${op}/${id}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -635,7 +635,8 @@ async function deleteProductS(productId,button) {
     const token = localStorage.getItem("token");
 
     try {
-        const response = await fetch(`http://localhost:3600/user/cart/${productId}`, {
+
+        const response = await fetch(`https://bloomtrack-herbal-plant-e-commerce.onrender.com/user/cart/${productId}`, {
             method: "DELETE",
             headers: {
                 "Authorization": "Bearer " + token
