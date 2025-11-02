@@ -2,8 +2,8 @@ const upload = require('../middleware/upload')
 const express = require('express')
 const mongoose = require('mongoose')
 const Grid = require('gridfs-stream') 
-const router = new express()
-
+// const router = new express()
+const router = express.Router();
 
 let gfs
 let gridfsBucket
@@ -15,11 +15,12 @@ const conn = mongoose.createConnection(process.env.MONGOOSE_CONNECTION_URL,{
   })
 
 conn.once("open", function(){
+      console.log(' GridFS connection open');
     gridfsBucket = new mongoose.mongo.GridFSBucket(conn.db, {
         bucketName: 'photos'
     })
 
-    gfs = Grid(conn, mongoose.mongo)
+    gfs = Grid(conn.db, mongoose.mongo)
     gfs.collection("photos")
   
 })
